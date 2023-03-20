@@ -8,7 +8,7 @@ function getContent(fragmentId, callback) {
     // lets do some custom content for each page of your website
     var pages = {
         home: `<md-block src="./docs/pages/index.md" id="md-block-app"></md-block>`,
-        about: `<md-block src="./docs/pages/about.md" id="md-block-app"></md-block>`,
+        about: `<md-block src="./README.md" id="md-block-app"></md-block>`,
         contact: "Contact me on this page if you have any questions",
         crispy: `<md-block src="./docs/pages/crispy.md" id="md-block-app"></md-block>`,
     };
