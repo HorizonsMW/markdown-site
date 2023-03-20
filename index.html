@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+    <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="module" src="./node_modules/md-block/md-block.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <div class="col d-none" id="menu">
+        <button class="d-md-none btn-close" id="btnCloseMenu" onclick="closeMenu()">x</button>
+        <button>btn</button>
+        <button>btn</button>
+    </div>
+    <header class="row position-sticky top-0 p-3 bg-black bg-opacity-75 rounded-3 m-2">
+        <div class="container">
+            <div class="row  d-flex align-items-center text-light">
+                <div class="col">
+                    <h2>Document</h2>
+                </div>
+                <div class="col d-flex justify-content-center">
+                    <span>
+                        <h3 id="date"> </h3>
+                    </span>
+
+                    <SCript>
+                        const date = new Date();
+                        const shortDate = date.toLocaleDateString('en-UK').toString();
+                        const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric' });
+
+                        let date_time = shortDate + " " + hoursAndMinutes;
+                        document.getElementById("date").innerHTML = date_time;
+                    </SCript>
+
+                </div>
+                <div class="col">
+                    <button class="d-md-none" id="btnMenu" onclick="menu()">Menu</button>
+                    <div class="col d-none d-md-block d-md-flex justify-content-md-end text-decoration-none" id="btnGroup">
+                        <button class="d-md-none btn-close" id="btnCloseMenu" onclick="closeMenu()">x</button>
+                        <a href="#home">Home</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#about">About</a>
+                        <a href="#blog">Blog</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="bg-body opacity-75 p-3 m-2 rounded-3">
+        <div class="container text-wrap" id="app">
+            <md-block src="./docs/pages/index.md" id="md-block-app"></md-block>
+            <script src="main.js"></script>
+        </div>
+    </section>
+
+    <footer>
+        <h2>foot</h2>
+    </footer>
+    <script>
+        function menu() {
+            console.log("Menu");
+            let btnGroup = document.getElementById("menu");
+            btnGroup.display = "block"
+        }
+
+        function closeMenu() {
+            let btnGroup = document.getElementById("menu");
+            btnGroup.classList.add(`d-none`);
+        }
+    </script>
+</body>
+
+</html>

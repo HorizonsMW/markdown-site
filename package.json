@@ -1,0 +1,14 @@
+{
+  "name": "bmulwa-in-markdown",
+  "version": "1.0.0",
+  "description": "Site rendered from markdown documents",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brian Mulwa",
+  "license": "ISC",
+  "dependencies": {
+    "md-block": "^0.0.1"
+  }
+}
