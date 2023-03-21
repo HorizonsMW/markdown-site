@@ -9,3 +9,9 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.custom-link a{
+    text-decoration: none;
+    margin: 2px;
+    font-size: inherit;
+}

@@ -24,31 +24,37 @@
         <div class="container">
             <div class="row  d-flex align-items-center text-light">
                 <div class="col">
-                    <h2>Document</h2>
+                    <h3>Document</h3>
                 </div>
                 <div class="col d-flex justify-content-center">
                     <span>
-                        <h3 id="date"> </h3>
+                        <h4 id="date"> </h4>
                     </span>
 
                     <SCript>
-                        const date = new Date();
-                        const shortDate = date.toLocaleDateString('en-UK').toString();
-                        const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric' });
+                        function time() {
+                            const date = new Date();
+                            const shortDate = date.toLocaleDateString('en-UK').toString();
+                            const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric', second: "numeric" });
 
-                        let date_time = shortDate + " " + hoursAndMinutes;
-                        document.getElementById("date").innerHTML = date_time;
+                            let date_time = shortDate + " " + hoursAndMinutes;
+                            document.getElementById("date").innerHTML = date_time;
+                        }
+
+                        setInterval(time, 1000);
+
                     </SCript>
 
                 </div>
-                <div class="col">
-                    <button class="d-md-none" id="btnMenu" onclick="menu()">Menu</button>
-                    <div class="col d-none d-md-block d-md-flex justify-content-md-end text-decoration-none" id="btnGroup">
+                <div class="col d-flex justify-content-end">
+                    <a class="d-sm-flex d-md-none nav-link" id="btnMenu" onclick="menu()"> <img
+                            src="https://icons8.com/icon/101759/circled-menu" alt="Menu"> </a>
+                    <div class="col d-none d-md-flex justify-content-md-end custom-link" id="btnGroup">
                         <button class="d-md-none btn-close" id="btnCloseMenu" onclick="closeMenu()">x</button>
-                        <a href="#home">Home</a>
-                        <a href="#contact">Contact</a>
-                        <a href="#about">About</a>
-                        <a href="#blog">Blog</a>
+                        <h4><a href="#home">Home</a></h4>
+                        <h4><a href="#contact">Contact</a></h4>
+                        <h4> <a href="#about">About</a> </h4>
+                        <h4><a href="#blog">Blog</a></h4>
                     </div>
                 </div>
             </div>
