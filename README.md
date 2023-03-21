@@ -9,7 +9,9 @@ I'll keep on learning markdown, thanks to a book I found [online](https://www.ma
 
 Publishing this site has been made possible and deployed using [Netlify](https://app.netlify.com/) which I also saw, for the first time, in one of Chris Titus's videos on Youtube.
 
-All the `code` is housed in this **[directory](https://github.com/HorizonsMW/docusaurus-base/tree/main/my-website)** on Github. 
+PS: I started working on markdown using Docusaurus but I have since then decided to build my own static website using `md-block` and some good old Javascript. You are looking at the new site. 
+
+The initial Docusaurus site `code` is housed in this **[directory](https://github.com/HorizonsMW/docusaurus-base/tree/main/my-website)** on Github. This current site has a new [repository](https://github.com/HorizonsMW/markdown-site.git).
 
 >Kind Regards,
 >

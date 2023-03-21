@@ -15,69 +15,106 @@
 </head>
 
 <body>
-    <div class="col d-none" id="menu">
-        <button class="d-md-none btn-close" id="btnCloseMenu" onclick="closeMenu()">x</button>
-        <button>btn</button>
-        <button>btn</button>
-    </div>
-    <header class="row position-sticky top-0 p-3 bg-black bg-opacity-75 rounded-3 m-2">
-        <div class="container">
-            <div class="row  d-flex align-items-center text-light">
+    <div class="d-none position-absolute mt-5" id="btnGroup">
+        <h4 class="btn-close link-danger text-danger" id="btnCloseMenu" onclick="closeMenu()"></h4>
+        <h4 class="m-0"><a href="#home"><img src="./assets/img/icons/icons8-home.svg" alt="Home"></a></h4>
+        <h4 class="m-0"><a href="#contact"><img src="./assets/img/icons/icons8-contacts.svg" alt="Contact"></a></h4>
+        <h4 class="m-0"> <a href="#about"><img src="./assets/img/icons/icons8-info.svg" alt="About"></a></h4>
+        <h4 class="m-0"><a href="#blog"><img src="./assets/img/icons/icons8-blogger.svg" alt="Blogger"></a></h4>
+        </div>
+    <header>
+        <SCript>
+            function time() {
+                const date = new Date();
+                const shortDate = date.toLocaleDateString('en-UK').toString();
+                const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric', second: "numeric" });
+                let date_time = shortDate + " " + hoursAndMinutes;
+                document.getElementById("date").innerHTML = date_time;
+            }
+            setInterval(time, 1000);
+        </SCript>
+        <div class="container p-3 bg-black bg-opacity-75 rounded-3">
+            <div class="row d-flex align-items-center text-light">
                 <div class="col">
-                    <h3>Document</h3>
+                    <h4 class="m-0">Document</h4>
                 </div>
-                <div class="col d-flex justify-content-center">
-                    <span>
-                        <h4 id="date"> </h4>
-                    </span>
-
-                    <SCript>
-                        function time() {
-                            const date = new Date();
-                            const shortDate = date.toLocaleDateString('en-UK').toString();
-                            const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric', second: "numeric" });
-
-                            let date_time = shortDate + " " + hoursAndMinutes;
-                            document.getElementById("date").innerHTML = date_time;
-                        }
-
-                        setInterval(time, 1000);
-
-                    </SCript>
-
+                <div class="col d-flex justify-content-center align-items-center">
+                    <p class=" d-flex justify-content-center  align-items-center" id="date"></p>
                 </div>
                 <div class="col d-flex justify-content-end">
-                    <a class="d-sm-flex d-md-none nav-link" id="btnMenu" onclick="menu()"> <img
-                            src="https://icons8.com/icon/101759/circled-menu" alt="Menu"> </a>
-                    <div class="col d-none d-md-flex justify-content-md-end custom-link" id="btnGroup">
-                        <button class="d-md-none btn-close" id="btnCloseMenu" onclick="closeMenu()">x</button>
-                        <h4><a href="#home">Home</a></h4>
-                        <h4><a href="#contact">Contact</a></h4>
-                        <h4> <a href="#about">About</a> </h4>
-                        <h4><a href="#blog">Blog</a></h4>
+                  
+                    <div class="col d-none d-md-flex justify-content-end custom-link">
+                        <a class="m-0" id="btnMenu" onclick="menu()"> <img src="./assets/img/icons/icons8-menu.svg" alt="Menu"> </a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <section class="bg-body opacity-75 p-3 m-2 rounded-3">
+
+    <section class="bg-body opacity-75 p-3 m-2 rounded-3 content-section">
         <div class="container text-wrap" id="app">
             <script src="main.js"></script>
         </div>
     </section>
 
     <footer>
-        <h2>foot</h2>
+        <div class="row">
+            <div class="col">
+                <h2>About Us</h2>
+                <p>Some text about us.</p>
+                <p>Some more text about us.</p>
+            </div>
+            <div class="col">
+                <h2>Contact Us</h2>
+                <p>Some text about contact us.</p>
+                <p>Some more text about contact us.</p>
+            </div>
+            <div class="col">
+                <h2>Legal</h2>
+                <p>Sources</p>
+                <p></p>
+                <p>
+                    All icons by <a target="_blank" href="https://icons8.com">Icons8.</a>
+                    See code for more info.
+                <div class="d-none">
+                    <a target="_blank" href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter">Twitter</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin">LinkedIn</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/wFfu6zXx15Yk/home">Home</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/ssvbWITVTVC5/contacts">Contacts</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/W5To6Q3gjDiK/news">News</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/65072/blogger">Blogger</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/MmupZtPbnw66/menu">Menu</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+
+                    <a target="_blank" href="https://icons8.com/icon/VQOfeAx5KWTK/info">Info</a> icon by <a
+                        target="_blank" href="https://icons8.com">Icons8</a>
+                </div>
+                </p>
+            </div>
+        </div>
     </footer>
     <script>
         function menu() {
             console.log("Menu");
-            let btnGroup = document.getElementById("menu");
-            btnGroup.display = "block"
+            let btnGroup = document.getElementById("btnGroup");
+            btnGroup.classList.remove("d-none");
+            btnGroup.classList.add("d-flex");
         }
 
         function closeMenu() {
-            let btnGroup = document.getElementById("menu");
+            let btnGroup = document.getElementById("btnGroup");
             btnGroup.classList.add(`d-none`);
         }
     </script>

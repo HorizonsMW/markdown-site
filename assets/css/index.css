@@ -8,10 +8,48 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
-
-.custom-link a{
+#btnGroup{
+    z-index: 3;
+}
+.custom-link a {
     text-decoration: none;
     margin: 2px;
     font-size: inherit;
+}
+
+.custom-link img {
+    width: 30px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    z-index: 1;
+    padding: 5px;
+}
+
+header p,
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+}
+
+.content-section {
+    margin-top: 20px;
+    z-index: 2;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
 }
