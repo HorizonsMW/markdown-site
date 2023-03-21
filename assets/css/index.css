@@ -12,6 +12,11 @@ body {
 }
 #btnGroup{
     z-index: 3;
+    right: 10px;
+    background-color: rgba(245, 245, 220, 0.623);
+}
+#btnGroup img{
+width: 30px;
 }
 .custom-link a {
     text-decoration: none;
