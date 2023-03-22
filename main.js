@@ -17,10 +17,12 @@ function getContent(fragmentId, callback) {
 
     ///
     var page = `<md-block src="./docs/pages/${fragmentId}.md" id="md-block-app"></md-block>`;
+    console.log(page);
     if (fragmentId === "about") {
         callback(`<md-block src="./README.md" id="md-block-app"></md-block>`);
     } else {
         callback(page);
+        
         
         if (undefined) {
             callback(`<md-block src="./docs/pages/missing_file.md" id="md-block-app"></md-block>`);
