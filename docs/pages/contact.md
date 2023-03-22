@@ -30,13 +30,13 @@
 
 <div class="d-flex justify-content-center">
 <md-block>
-[![WhatsApp](../../assets/img/icons/icons8-whatsapp.svg)](https://api.whatsapp.com/send/?phone=254711990838&text=&type=phone_number&app_absent=0)
+[![WhatsApp](../../assets/img/icons/icons8-whatsapp.svg)](https://api.whatsapp.com/send/?phone=254711990838&text=Hi,+I'm+texting+you+from+your+website+(bmulwa.netlify.app).&type=phone_number&app_absent=0)
 [![Email](../../assets/img/icons/icons8-mailbox.svg)](mailto:mw711990838@gmail.com)
 
 [![LinkedIn](../../assets/img/icons/icons8-linkedin.svg)](https://linkedin.com/in/brian-mulwa-a700661a1/) [![Twitter](../../assets/img/icons/icons8-twitter.svg)](https://twitter.com/@marcobrayan4)
 
 
-[![GitHub](../../assets/img/icons/icons8-github.svg)](https://github.com/HorizonsMW/)
+[![GitHub](../../assets/img/icons/icons8-github.svg)](https://github.com/HorizonsMW/)[![Resume](../../assets/img/icons/icons8-document.svg)](#resume)
 
 </md-block>
 </div>

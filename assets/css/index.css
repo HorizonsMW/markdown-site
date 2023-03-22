@@ -70,8 +70,23 @@ h5 {
 .content-section {
     margin-top: 100px;
     z-index: 1;
+    background-color: rgba(255, 255, 255, 0.63);
 }
 
 footer .row h2 {
     text-align: center;
+}
+
+.home a{
+    text-decoration: none;
+    font-size: 102%;
+    color: rgb(0, 0, 0);
+}
+.home img{
+    height: 40px;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(248, 248, 135);
 }
