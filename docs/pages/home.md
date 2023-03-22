@@ -1,16 +1,3 @@
-## Welcome
-> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sint eum expedita alias modi magni. Tenetur veritatis odio, aliquid, blanditiis fuga corporis nesciunt officiis nam omnis necessitatibus voluptates reprehenderit unde!  Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sint eum expedita alias modi magni. Tenetur veritatis odio, aliquid, blanditiis fuga corporis nesciunt officiis nam omnis necessitatibus voluptates reprehenderit unde! Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sint eum expedita alias modi magni. Tenetur veritatis odio, aliquid, blanditiis fuga corporis nesciunt officiis nam omnis necessitatibus voluptates reprehenderit unde!
+## Welcome to My Website
 
-```css
-* {
-    overflow-x: hidden;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-body {
-    background-image: url(https://bing.biturl.top/?resolution=1366&format=image&index=0&mkt=random);
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-```
+Hello and thank you for visiting my personal website. My name is Brian Mulwa and I am a freelance web developer and designer. I created this website to showcase some of my projects and skills, as well as to share some of my thoughts and opinions on various topics related to web development. On this website, you can find my portfolio, blog, resume, contact information and more. I hope you enjoy browsing through my work and learning more about me. If you have any questions or feedback, please feel free to reach out to me via email or social media. I would love to hear from you and collaborate with you on your next project.
