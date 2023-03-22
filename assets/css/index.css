@@ -10,14 +10,33 @@ body {
     background-size: cover;
     background-attachment: fixed;
 }
-#btnGroup{
+
+#btnGroup {
     z-index: 3;
-    right: 10px;
+    right: 20px;
+    width: 10em;
     background-color: rgba(245, 245, 220, 0.623);
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 1em;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    border: 2px solid rgba(35, 32, 13, 0.814);
+
 }
-#btnGroup img{
-width: 30px;
+
+#btnGroup img {
+    width: 32px;
 }
+
+#btnGroup a {
+    text-decoration: none;
+    color: rgba(35, 32, 13, 0.814);
+}
+
 .custom-link a {
     text-decoration: none;
     margin: 2px;
@@ -34,7 +53,8 @@ header {
     left: 0;
     right: 0;
     color: white;
-    z-index: 1;
+    height: auto;
+    z-index: 2;
     padding: 5px;
 }
 
@@ -48,13 +68,10 @@ h5 {
 }
 
 .content-section {
-    margin-top: 20px;
-    z-index: 2;
+    margin-top: 100px;
+    z-index: 1;
 }
 
-footer {
+footer .row h2 {
     text-align: center;
-    padding: 3px;
-    background-color: DarkSalmon;
-    color: white;
 }

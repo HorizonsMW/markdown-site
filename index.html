@@ -15,100 +15,121 @@
 </head>
 
 <body>
-    <div class="row d-none position-absolute mt-5 rounded-3" id="btnGroup">
-        <div class="row d-flex justify-content-end">
-            <h4 class="btn-close link-danger text-danger" id="btnCloseMenu" onclick="closeMenu()"></h4>
-        </div>
-        <div class="row">
-            <div class="col">
-                <h4 class="m-0"><a href="#home"><img src="./assets/img/icons/icons8-home.svg" alt="Home"><span>Home</span></a></h4>
-                <h4 class="m-0"><a href="#contact"><img src="./assets/img/icons/icons8-contacts.svg" alt="Contact"></a></h4>
-                <h4 class="m-0"> <a href="#about"><img src="./assets/img/icons/icons8-info.svg" alt="About"></a></h4>
-                <h4 class="m-0"><a href="#blog"><img src="./assets/img/icons/icons8-blogger.svg" alt="Blogger"></a></h4>
-            </div>
-        </div>        
-    </div>
     <header>
         <SCript>
             function time() {
                 const date = new Date();
-                const shortDate = date.toLocaleDateString('en-UK').toString();
-                const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric', second: "numeric" });
-                let date_time = shortDate + " " + hoursAndMinutes;
-                document.getElementById("date").innerHTML = date_time;
+                const shortDate = date.toLocaleDateString('en-UK').toString() + ", ";
+                const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric' });
+
+                document.getElementById("date").innerHTML = shortDate;
+                document.getElementById("time").innerHTML = hoursAndMinutes;
             }
             setInterval(time, 1000);
         </SCript>
         <div class="container p-3 bg-black bg-opacity-75 rounded-3">
             <div class="row d-flex align-items-center text-light">
                 <div class="col">
-                    <h4 class="m-0">Document</h4>
+                    <h4 class="m-0" id="currentPage">Document</h4>
                 </div>
                 <div class="col d-flex justify-content-center align-items-center">
-                    <p class=" d-flex justify-content-center  align-items-center" id="date"></p>
+                    <p class=" d-none d-md-flex justify-content-center  align-items-center" id="date"></p><span
+                        id="time"></span>
                 </div>
-                <div class="col d-flex justify-content-end">
-
-                    <div class="col d-none d-md-flex justify-content-end custom-link">
-                        <a class="m-0" id="btnMenu" onclick="menu()"> <img src="./assets/img/icons/icons8-menu.svg"
-                                alt="Menu"> </a>
-                    </div>
+                <div class="col d-flex justify-content-end align-items-end custom-link">
+                    <a class="m-0" id="btnMenu" onclick="menu()"> <img src="./assets/img/icons/icons8-menu.svg"
+                            alt="Menu"> </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="bg-body opacity-75 p-3 m-2 rounded-3 content-section">
-        <div class="container text-wrap" id="app">
+    <div class="row d-none m-0 mt-5 m-md-5" id="btnGroup">
+        <div class="row d-flex justify-content-end p-0">
+            <h4 class="btn-close link-danger text-danger" id="btnCloseMenu" onclick="closeMenu()"></h4>
+        </div>
+        <div class="row p-0">
+            <div class="col">
+                <h5 class="m-0"><a href="#home"><img src="./assets/img/icons/icons8-home.svg"
+                            alt="Home"><span>Home</span></a></h4>
+                    <h5 class="m-0"><a href="#contact"><img src="./assets/img/icons/icons8-contacts.svg"
+                                alt="Contact"><span>Contact</span></a>
+                    </h5>
+                    <h5 class="m-0"> <a href="#about"><img src="./assets/img/icons/icons8-info.svg"
+                                alt="About"><span>About</span></a>
+                    </h5>
+                    <h5 class="m-0"><a href="#blog"><img src="./assets/img/icons/icons8-blogger.svg"
+                                alt="Blogger"><span>Blog</span></a>
+                    </h5>
+            </div>
+        </div>
+    </div>
+
+    <section class="d-flex justify-content-center">
+        <div class="container text-wrap bg-body opacity-75 rounded-3 content-section">
+            <div class="row" id="app">
+            </div>
             <script src="main.js"></script>
         </div>
     </section>
 
-    <footer>
-        <div class="row">
-            <div class="col">
-                <h2>About Us</h2>
-                <p>Some text about us.</p>
-                <p>Some more text about us.</p>
-            </div>
-            <div class="col">
-                <h2>Contact Us</h2>
-                <p>Some text about contact us.</p>
-                <p>Some more text about contact us.</p>
-            </div>
-            <div class="col">
-                <h2>Legal</h2>
-                <p>Sources</p>
-                <p></p>
-                <p>
-                    All icons by <a target="_blank" href="https://icons8.com">Icons8.</a>
-                    See code for more info.
-                <div class="d-none">
-                    <a target="_blank" href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter">Twitter</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin">LinkedIn</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/wFfu6zXx15Yk/home">Home</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/ssvbWITVTVC5/contacts">Contacts</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/W5To6Q3gjDiK/news">News</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/65072/blogger">Blogger</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/MmupZtPbnw66/menu">Menu</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
-
-                    <a target="_blank" href="https://icons8.com/icon/VQOfeAx5KWTK/info">Info</a> icon by <a
-                        target="_blank" href="https://icons8.com">Icons8</a>
+    <footer class="d-flex justify-content-center">
+        <div class="container m-2 rounded-3 bg-black bg-opacity-50 text-light p-2">
+            <div class="row d-block d-md-flex">
+                <div class="col">
+                    <h2>About Us</h2>
+                    <h3>Team</h3>
+                    <p>Some text about us.</p>
+                    <p>Some more text about us.</p>
                 </div>
-                </p>
+                <div class="col">
+                    <h2>Contact Us</h2>
+                    <p>Some text about contact us.</p>
+                    <p>Some more text about contact us.</p>
+                </div>
+                <div class="col">
+                    <h2>Legal</h2>
+                    <h3>Sources</h3>
+                    <p>Bing wallpaper set from this github <a
+                            href="https://github.com/TimothyYe/bing-wallpaper.git">repo</a></p>
+                    <p>Markdown rendered using <a href="https://github.com/LeaVerou/md-block.git">md-block</a></p>
+                    <p>
+                        All icons by <a target="_blank" href="https://icons8.com">Icons8.</a>
+                        See <a href="https://github.com/HorizonsMW/markdown-site.git">code</a> for more info.
+                    <div class="d-none">
+                        <a target="_blank" href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter">Twitter</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin">LinkedIn</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/wFfu6zXx15Yk/home">Home</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/ssvbWITVTVC5/contacts">Contacts</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/W5To6Q3gjDiK/news">News</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/65072/blogger">Blogger</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/MmupZtPbnw66/menu">Menu</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+
+                        <a target="_blank" href="https://icons8.com/icon/VQOfeAx5KWTK/info">Info</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+                        <a target="_blank" href="https://icons8.com/icon/16713/whatsapp">WhatsApp</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+                        <a target="_blank" href="https://icons8.com/icon/OUIi5nqGLmlL/mailbox">Mailbox</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+                    </div>
+                    </p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>Copyright © 2023</p>
             </div>
         </div>
     </footer>

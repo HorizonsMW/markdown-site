@@ -34,11 +34,12 @@ function getContent(fragmentId, callback) {
 
 function loadContent() {
     var contentDiv = document.getElementById("app");
+    var currentPage = document.getElementById("currentPage");
     // This gets rid of the first character of the string
     fragmentId = location.hash.substr(1);
+    currentPage.innerHTML = fragmentId.toString().charAt(0).toUpperCase()+fragmentId.substr(1);
 
-    console.log(fragmentId);
-
+   // console.log(fragmentId);
 
     getContent(fragmentId, (content) => {
         try {
@@ -48,7 +49,7 @@ function loadContent() {
         }
     });
 }
-loadContent()
+loadContent();
 
 window.addEventListener("hashchange", function () {
     console.log("Location: " + location.hash);

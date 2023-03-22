@@ -1,34 +1,6 @@
 ### Contact me on this page if you have any questions
 
+[![WhatsApp](../../assets/img/icons/icons8-whatsapp.svg)](https://api.whatsapp.com/send/?phone=254711990838&text=&type=phone_number&app_absent=0)
+[![Email](../../assets/img/icons/icons8-mailbox.svg)](mailto:mw711990838@gmail.com)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<a target="_blank" href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter">Twitter</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin">LinkedIn</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/wFfu6zXx15Yk/home">Home</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/ssvbWITVTVC5/contacts">Contacts</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/W5To6Q3gjDiK/news">News</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/65072/blogger">Blogger</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/MmupZtPbnw66/menu">Menu</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-<a target="_blank" href="https://icons8.com/icon/VQOfeAx5KWTK/info">Info</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+[![LinkedIn](../../assets/img/icons/icons8-linkedin.svg)](https://linkedin.com/in/brian-mulwa-a700661a1/) [![Twitter](../../assets/img/icons/icons8-twitter.svg)](https://twitter.com/@marcobrayan4)
