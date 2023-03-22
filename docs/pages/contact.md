@@ -16,7 +16,7 @@
   #### Front End Developer || ICT Technician || Graphics Designer
   Email: mw711990838@gmail.com || bmulwa766@gmail.com
 
-  Phone: 254 711 990838
+  Phone:  [254 711 990838](tel:+254711990838)
   </md-block>
   </div>
   </div>
@@ -34,5 +34,9 @@
 [![Email](../../assets/img/icons/icons8-mailbox.svg)](mailto:mw711990838@gmail.com)
 
 [![LinkedIn](../../assets/img/icons/icons8-linkedin.svg)](https://linkedin.com/in/brian-mulwa-a700661a1/) [![Twitter](../../assets/img/icons/icons8-twitter.svg)](https://twitter.com/@marcobrayan4)
+
+
+[![GitHub](../../assets/img/icons/icons8-github.svg)](https://github.com/HorizonsMW/)
+
 </md-block>
 </div>
