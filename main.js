@@ -97,24 +97,26 @@ function options() {
 function sharePage() {
     alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
     console.log("Share page");
-        if (navigator.canShare()) {
-            try {
-                const url = window.location.href;
-                const shareData = {
-                    title: 'Brian Mulwa\'s website',
-                    text: 'Check out this cool website!',
-                    url: `${url}`
-                };
-                document.getElementById("moreOptionsButtons").classList.add("d-none");
 
-                navigator.share(shareData);
+    if (navigator.canShare()) {
+        try {
+            const url = window.location.href;
+            const shareData = {
+                title: 'Brian Mulwa\'s website',
+                text: 'Check out this cool website!',
+                url: `${url}`
+            };
 
-                console.log("MDN shared successfully");
 
-            } catch (err) {
-                console.log(`Error: ${err}`);
-            }
-        } else {
-            console.log("Sharing not supported");
-        };
+            navigator.share(shareData);
+
+            console.log("MDN shared successfully");
+
+        } catch (err) {
+            console.log(`Error: ${err}`);
+        }
+    } else {
+        console.log("Sharing not supported");
+    };
+    document.getElementById("moreOptionsButtons").classList.add("d-none");
 }
