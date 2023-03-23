@@ -18,11 +18,11 @@ with you on your next project.
 
 #### Say Something (Your message will be sent via WhatsApp)
 <div class="d-grid m-2">
-    <div class="col d-flex justify-content-center m-2 p-2 ">
-     <input class="rounded-pill w-50 p-2" type="text" id="name" name="name" required minlength="4" maxlength="8" size="10" placeholder="Your name">
+    <div class="col d-flex justify-content-center m-0 p-2 input">
+     <input class="rounded-pill p-2" type="text" id="name" name="name" required minlength="4" maxlength="20" size="10" placeholder="Your name">
     </div>
-    <div class="col d-flex justify-content-center m-2 p-2">
-      <textarea class="rounded-3 w-50 p-2" type="text" id="message" name="message" required minlength="10" size="12" placeholder="Your message"></textarea>
+    <div class="col d-flex justify-content-center m-0 p-2 input">
+      <textarea class="rounded-3 p-2" type="text" id="message" name="message" required minlength="10" size="12" placeholder="Your message"></textarea>
     </div>
      <div class="col d-flex justify-content-center m-2 p-2 home">
         <button id="done" class="bg-success rounded-pill border-0 px-5 bg-opacity-75 text-light m-2" onclick="sendMessage()">Done</button>
