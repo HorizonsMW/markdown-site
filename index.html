@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
     <link rel="icon" type="image/svg+xml" href="./assets/img/icons/icons8-get-started-app.svg">
     <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-    <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <script type="module" src="./node_modules/md-block/md-block.js"></script>
     <script src="main.js"></script>
 </head>
@@ -110,9 +109,9 @@
     <div class="row m-0 mx-md-5 p-0 d-none" id="moreOptionsButtons">
         <div class="col p-0">
             <div class="d-grid justify-content-start p-1 bg-body bg-opacity-75 rounded-pill ">
-                <a class="" onclick="sharePage()">
-                    <img class=""  src="./assets/img/icons/icons8-share.svg" alt="">
-                </a>
+                <button class="link-primary border-0 bg-transparent" id="shareButton" onclick="sharePage()">
+                    <img class=""  src="./assets/img/icons/icons8-share.svg" alt="Share">
+                </button>
             </div>
         </div>
     </div>

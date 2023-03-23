@@ -93,22 +93,28 @@ function options() {
     console.log("Options in the house");
     document.getElementById("moreOptionsButtons").classList.remove("d-none");
 }
+
 function sharePage() {
-    document.getElementById("moreOptionsButtons").classList.add("d-none");
-    const url = window.location.href; //get url
-    //console.log(url);
+    alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
+    console.log("Share page");
+        if (navigator.canShare()) {
+            try {
+                const url = window.location.href;
+                const shareData = {
+                    title: 'Brian Mulwa\'s website',
+                    text: 'Check out this cool website!',
+                    url: `${url}`
+                };
+                document.getElementById("moreOptionsButtons").classList.add("d-none");
 
-    if (navigator.canShare()) {
-        navigator.share({
-            title: 'Brian Mulwa\'s website',
-            text: 'Check out this cool website!',
-            url: `${url}`
-        })
-            .then(() => console.log('Successful share'))
-            .catch((error) => console.log('Error sharing', error));
-    }else{
-        console.log("Sharing not supported");
-    }
+                navigator.share(shareData);
 
+                console.log("MDN shared successfully");
 
+            } catch (err) {
+                console.log(`Error: ${err}`);
+            }
+        } else {
+            console.log("Sharing not supported");
+        };
 }
