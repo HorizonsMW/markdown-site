@@ -59,6 +59,9 @@ function getContent(fragmentId, callback) {
 
 There is a lot more tinkering that has happened to build this site. Oh! Before I forget, Markdown + HTML is an heavenly combination. For clarity, using HTML tags in Markdown documents is a very recommendable way to overcome the limitations of Markdown. For example, the [contact](#contact) page is an intricate blend of the two technologies to bring out the best of both. 
 
+### The background
+Having a single background was not on the menu to start with. A background plays a key role in defining a website. Simply put, having one permanent background - in my own opinion - may be a disadvanage to enticing visitors. I think that, to stand out, you need a unique flair -one that excites and keeps the audience subtly entertained.
+
 >Kind Regards,
 >
 >Brian Mulwa.
