@@ -75,7 +75,7 @@ function abortMessage() {
     //console.log("abortMessage()");
     document.getElementById("messageSender").classList.add("d-none"); //Hide popup
     var link = document.getElementById("myLink"); //get host div to get tags in it
- 
+
     var oldLink = link.getElementsByTagName("a");// get a tags under myLink div
 
     /**  var oldLink  = link.getElementsByTagName("a"); returns an HTMLCollection
@@ -85,7 +85,30 @@ function abortMessage() {
 
     while (oldLink.length > 0) {
         oldLink[0].remove();//remove old links
-      }
-    
+    }
+
     console.log(oldLink);
+}
+function options() {
+    console.log("Options in the house");
+    document.getElementById("moreOptionsButtons").classList.remove("d-none");
+}
+function sharePage() {
+    document.getElementById("moreOptionsButtons").classList.add("d-none");
+    const url = window.location.href; //get url
+    //console.log(url);
+
+    if (navigator.canShare()) {
+        navigator.share({
+            title: 'Brian Mulwa\'s website',
+            text: 'Check out this cool website!',
+            url: `${url}`
+        })
+            .then(() => console.log('Successful share'))
+            .catch((error) => console.log('Error sharing', error));
+    }else{
+        console.log("Sharing not supported");
+    }
+
+
 }

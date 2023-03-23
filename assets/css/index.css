@@ -77,21 +77,22 @@ footer .row h2 {
     text-align: center;
 }
 
-.home a{
+.home a {
     text-decoration: none;
     font-size: 102%;
     color: rgb(0, 0, 0);
 }
-.home img{
+
+.home img {
     height: 40px;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: rgb(248, 248, 135);
 }
 
-#messageSender{
+#messageSender {
     z-index: 3;
     width: 20em;
     background-color: rgba(245, 245, 220, 0.911);
@@ -107,16 +108,45 @@ footer a{
 }
 
 
-#myLink a{
+#myLink a {
     text-decoration: none;
     color: beige;
     float: right;
-    background-color:#198754;
+    background-color: #198754;
     padding: 2px 10px;
     border-radius: 15px;
 }
 
-.input input,.input textarea{
+.input input,
+.input textarea {
     width: 90%;
     border: 2px solid rgba(35, 32, 13, 0.814);
+}
+
+#moreOptions {
+    z-index: 4;
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 30px;
+    right: -250px;
+}
+#moreOptionsButtons{
+    z-index: 4;
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 80px;
+    right: -250px;
+}
+#moreOptionsButtons img{
+    width: 30px;
 }

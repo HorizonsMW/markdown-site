@@ -73,28 +73,52 @@
             </div>
         </div>
     </div>
+<!-- Send message pop up-->
+<div class="container w-100 d-flex justify-content-center">
+    <div class="row m-0  d-none" id="messageSender">
+        <div class="col">
+            <div class="d-flex justify-content-end">
+                <a class="btn-close bg-danger" onclick="abortMessage()"></a>
+            </div>
+            <md-block>
+                #### Confirm Message
+                ***
+            </md-block>
+            <p id="yourName">yourName</p>
+            <p class="text-break" id="yourMessage">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci, dolore? Ullam,
+                nesciunt officia aperiam fugiat dolores ad. Repellat aspernatur error architecto voluptatem aliquid,
+                totam expedita incidunt quia sint eaque iste!</p>
+            <div class="p-2 rounded-3" id="myLink">
 
-    <div class="container w-100 d-flex justify-content-center">
-        <div class="row m-0  d-none" id="messageSender">
-            <div class="col">
-                <div class="d-flex justify-content-end">
-                    <a class="btn-close bg-danger" onclick="abortMessage()"></a>
-                </div>
-                <md-block>
-                    #### Confirm Message
-                    ***
-                </md-block>
-                <p id="yourName">yourName</p>
-                <p class="text-break" id="yourMessage">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, dolore? Ullam,
-                    nesciunt officia aperiam fugiat dolores ad. Repellat aspernatur error architecto voluptatem aliquid,
-                    totam expedita incidunt quia sint eaque iste!</p>
-                <div class="p-2 rounded-3" id="myLink">
-
-                </div>
             </div>
         </div>
     </div>
+</div>
 
+<!-- Plus Icon - more options-->
+<div class="container d-flex justify-content-center">
+    <div class="row m-0 mx-md-5 p-0" id="moreOptions">
+        <div class="col p-0">
+            <div class="d-flex justify-content-start bg-success bg-opacity-75 rounded-pill p-1">
+                <a class="" onclick="options()">
+                    <img src="./assets/img/icons/icons8-plus.svg" alt="" width="40px">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="row m-0 mx-md-5 p-0 d-none" id="moreOptionsButtons">
+        <div class="col p-0">
+            <div class="d-grid justify-content-start p-1 bg-body bg-opacity-75 rounded-pill ">
+                <a class="" onclick="sharePage()">
+                    <img class=""  src="./assets/img/icons/icons8-share.svg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Content section-->
     <section class="d-flex justify-content-center p-2">
         <div class="container bg-opacity-75 rounded-3 content-section">
             <div class="row pt-3" id="app">
@@ -171,12 +195,28 @@
                             target="_blank" href="https://icons8.com">Icons8</a>
                         <a target="_blank" href="https://icons8.com/icon/qZ1FibjKOsRJ/upload-to-the-cloud">Upload to the
                             Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+                        <a target="_blank" href="https://icons8.com/icon/aWZy3jlAFSa9/plus">Plus</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+                        <a target="_blank" href="https://icons8.com/icon/fe3NTBhh8IKg/share">Share</a> icon by <a
+                            target="_blank" href="https://icons8.com">Icons8</a>
+                        <a target="_blank" href="https://icons8.com/icon/7cBzQPAwxKL1/double-up">Double Up</a> icon by
+                        <a target="_blank" href="https://icons8.com">Icons8</a>
                     </div>
                     </p>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <p>Copyright © 2023</p>
+                <p class="mx-2">
+                    <span>
+                        Buy me a ☕
+                        <md-span>
+                            [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=ZJ7765ZDCZ9LG)
+                        </md-span>
+                    </span>
+                </p>
+                <p>
+                    Copyright © 2023
+                </p>
             </div>
         </div>
     </footer>
