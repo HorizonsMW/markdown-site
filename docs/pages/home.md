@@ -25,7 +25,7 @@ with you on your next project.
       <textarea class="rounded-3 p-2" type="text" id="message" name="message" required minlength="10" size="12" placeholder="Your message"></textarea>
     </div>
      <div class="col d-flex justify-content-center m-2 p-2 home">
-        <button id="done" class="bg-success rounded-pill border-0 px-5 bg-opacity-75 text-light m-2" onclick="sendMessage()">Done</button>
+        <button id="done" class="bg-success rounded-pill border-0 px-5 py-2 bg-opacity-75 text-light m-2" onclick="sendMessage()">Done</button>
     </div>
    
 </div>
