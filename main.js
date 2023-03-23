@@ -95,6 +95,7 @@ function options() {
 }
 
 function sharePage() {
+    document.getElementById("moreOptionsButtons").classList.add("d-none");
     alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
     console.log("Share page");
 
@@ -118,5 +119,5 @@ function sharePage() {
     } else {
         console.log("Sharing not supported");
     };
-    document.getElementById("moreOptionsButtons").classList.add("d-none");
+    
 }
