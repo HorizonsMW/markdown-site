@@ -60,7 +60,8 @@ function getContent(fragmentId, callback) {
 There is a lot more tinkering that has happened to build this site. Oh! Before I forget, Markdown + HTML is an heavenly combination. For clarity, using HTML tags in Markdown documents is a very recommendable way to overcome the limitations of Markdown. For example, the [contact](#contact) page is an intricate blend of the two technologies to bring out the best of both. 
 
 ### The background
-Having a single background was not on the menu to start with. A background plays a key role in defining a website. Simply put, having one permanent background - in my own opinion - may be a disadvanage to enticing visitors. I think that, to stand out, you need a unique flair -one that excites and keeps the audience subtly entertained.
+Having a single background was not on the menu to start with. A background plays a key role in defining a website. Simply put, having one permanent background - in my own opinion - may be a disadvanage to enticing visitors. I think that, to stand out, you need a unique flair -one that excites and keeps the audience subtly entertained. I needed to have that dynamic exprience on my website. A lot of "sotwares" offer dynamic wallpapers, you have Samsung with their "Wallpaper Services" feature on OneUI, you have Samsung Global Goals wallpaper feature, there's Microsoft Edge with the New Tab Background, there's also Bing Wallpaper of the day, Windows 10 Lockscreen and so on. Bing Wallpaper! Phenomenal! Of all the dynamic wallpaper services that I have used, Bing Wallpapers stood out to me because of its excellent picks from the nature shelf nature and ease of use. Bing presents you with an image of the day with more information regarding the image and how to get it - that simple.
+<img class="bing" src="./assets/img/bing.png" alt="bing">
 
 >Kind Regards,
 >

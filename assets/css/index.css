@@ -135,7 +135,8 @@ footer a {
     bottom: 30px;
     right: -250px;
 }
-#moreOptionsButtons{
+
+#moreOptionsButtons {
     z-index: 4;
     width: 300px;
     padding-left: 10px;
@@ -147,6 +148,12 @@ footer a {
     bottom: 80px;
     right: -250px;
 }
-#moreOptionsButtons img{
+
+#moreOptionsButtons img {
     width: 30px;
+}
+
+.bing {
+    max-width: 90vw;
+    height: auto;
 }
