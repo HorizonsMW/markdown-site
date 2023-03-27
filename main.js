@@ -11,6 +11,12 @@ function getContent(fragmentId, callback) {
 
     if (fragmentId === "about") {
         callback(`<md-block src="./README.md" id="md-block-app"></md-block>`);
+    } else if (fragmentId === "blog") {
+        console.log("blog town");
+        callback(`<md-block src="./docs/blog/${fragmentId}.md" id="md-block-app"></md-block>`);
+    } else if (fragmentId.charAt(0) === "g") {
+        console.log("Gems town");
+        callback(`<md-block src="./docs/gems/${fragmentId}.md" id="md-block-app"></md-block>`);
     } else {
         callback(page);
     }
@@ -40,6 +46,16 @@ loadContent();
 window.addEventListener("hashchange", function () {
     console.log("Location: " + location.hash);
     loadContent();
+
+    if (this.location.hash == "#home") {
+        fetch('updates.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                lengthOfJson = Object.keys(data).length;
+                showUpdates(lengthOfJson);
+            });
+    }
 });
 function sendMessage() {
     var user = document.getElementById('name').value;//Get user input
@@ -119,5 +135,120 @@ function sharePage() {
     } else {
         console.log("Sharing not supported");
     };
-    
+
+}
+window.itemToShow = 0;
+
+function showUpdates(itemToShow) {
+    console.log("Item to show is " + itemToShow);
+
+    const titleOnDocument = document.getElementById("title");
+    const updateOnDocument = document.getElementById("update");
+    const linkOnDocument = document.getElementById("link");
+
+    fetch('updates.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+
+            window.lengthOfJson = Object.keys(data).length;
+
+            console.log("Length is " + lengthOfJson);
+
+            if (itemToShow >= lengthOfJson) {
+                this.itemToShow = lengthOfJson;
+
+                const titleData = data[itemToShow].title;
+                const updateData = data[itemToShow].update;
+                const linkData = data[itemToShow].link;
+
+                console.log(titleData);
+                console.log(updateData);
+                console.log(linkData);
+
+                const titleOnDocument = document.getElementById("title");
+                const updateOnDocument = document.getElementById("update");
+                const linkOnDocument = document.getElementById("link");
+
+                viewLink = generateUpdateLink(linkData);
+
+                if (titleOnDocument && updateOnDocument && linkOnDocument) {
+                    titleOnDocument.innerHTML = titleData;
+                    updateOnDocument.innerHTML = updateData;
+                    linkOnDocument.append(viewLink);
+                } else {
+                    console.log("Title and update body not found");
+                    if (location.hash == "#home") { showUpdates(itemToShow); }
+                }
+
+            } else if (itemToShow <= 0) {
+                this.itemToShow = 1;
+            } else {
+                const titleData = data[itemToShow].title;
+                const updateData = data[itemToShow].update;
+                const linkData = data[itemToShow].link;
+
+                console.log(titleData);
+                console.log(updateData);
+                console.log(linkData);
+
+                const titleOnDocument = document.getElementById("title");
+                const updateOnDocument = document.getElementById("update");
+                const linkOnDocument = document.getElementById("link");
+
+                viewLink = generateUpdateLink(linkData);
+
+                if (titleOnDocument && updateOnDocument && linkOnDocument) {
+                    titleOnDocument.innerHTML = titleData;
+                    updateOnDocument.innerHTML = updateData;
+                    linkOnDocument.append(viewLink);
+                } else {
+                    console.log("Title and update body not found");
+                    if (location.hash == "#home") { showUpdates(itemToShow); }
+                }
+            }
+
+        });
+    console.log("Showing " + itemToShow);
+    return itemToShow;
+}
+
+/*document.addEventListener("DOMContentLoaded", function() {
+    showUpdates();
+});*/
+
+window.onload = function () {
+    fetch('updates.json')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            lengthOfJson = Object.keys(data).length;
+            showUpdates(lengthOfJson);
+        });
+};
+
+function nextUpdate() {
+    console.log("Next Update");
+
+    this.itemToShow = itemToShow + 1;
+
+    console.log("New item " + itemToShow);
+    showUpdates(itemToShow);
+
+
+}
+function prevUpdate() {
+    console.log("Previous Update");
+    this.itemToShow = itemToShow - 1;
+
+    console.log("New item " + itemToShow);
+    showUpdates(itemToShow);
+
+}
+
+function generateUpdateLink(itemlink) {
+    var generatedUpdateLink = document.createElement("a");
+    generatedUpdateLink.setAttribute("href", itemlink);
+    generatedUpdateLink.innerHTML = "View";
+    return generatedUpdateLink;
 }

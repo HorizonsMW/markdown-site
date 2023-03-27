@@ -9,6 +9,8 @@
   "author": "Brian Mulwa",
   "license": "ISC",
   "dependencies": {
-    "md-block": "^0.0.1"
+    "fs": "^0.0.1-security",
+    "md-block": "^0.0.1",
+    "path": "^0.12.7"
   }
 }

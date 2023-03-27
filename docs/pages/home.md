@@ -11,12 +11,40 @@ with you on your next project.
 <div class="d-flex justify-content-center">
     <div class="col d-flex justify-content-center home">
         <md-block>
-            [![About](../../assets/img/icons/icons8-info.svg)About](#about)[![Resume](../../assets/img/icons/icons8-document.svg)Resume](#resume)[![Contact](../../assets/img/icons/icons8-contacts.svg)Contact](#contact)[![Blog](../../assets/img/icons/icons8-blogger.svg)Blog](#Blog)[![GitHub](../../assets/img/icons/icons8-github.svg)GitHub](https://github.com/HorizonsMW/markdown-site.git)[![News](../../assets/img/icons/icons8-news.svg)News](#news)                   
+            [![About](../../assets/img/icons/icons8-info.svg)About](#about)[![Resume](../../assets/img/icons/icons8-document.svg)Resume](#resume)[![Contact](../../assets/img/icons/icons8-contacts.svg)Contact](#contact)[![Blog](../../assets/img/icons/icons8-blogger.svg)Blog](#Blog)[![GitHub](../../assets/img/icons/icons8-github.svg)The code - GitHub](https://github.com/HorizonsMW/markdown-site.git)[![News](../../assets/img/icons/icons8-news.svg)News](#news)                   
         </md-block>
     </div>
 </div>
 
-#### Say Something (Your message will be sent via WhatsApp)
+***
+
+
+#### Updates
+
+<div class = "row">
+
+ 
+
+</div>
+
+
+
+
+<div class="d-grid m-2">
+     <div class="col d-grid d-md-flex justify-content-center m-2 p-2 home ">
+        <button id="done" class="col-sm-1 bg-success px-5 bg-opacity-75 text-light rounded-start m-0 border-0" onclick="nextUpdate()"><|</button>
+        <div class="col w-100 px-2">
+            <h5 id="title"></h5>
+            <p id="update"></p> 
+            <p id="link"></p> 
+        </div>
+        <button id="done" class="col-sm-1 bg-success px-5  bg-opacity-75 rounded-end text-light m-0 border-0" onclick="prevUpdate()">|></button>
+    </div>  
+</div>
+
+***
+
+#### Say Something
 <div class="d-grid m-2">
     <div class="col d-flex justify-content-center m-0 p-2 input">
      <input class="rounded-pill p-2" type="text" id="name" name="name" required minlength="4" maxlength="20" size="10" placeholder="Your name">

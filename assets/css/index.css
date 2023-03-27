@@ -157,3 +157,16 @@ footer a {
     max-width: 90vw;
     height: auto;
 }
+
+#updateDiv {
+    width: 90vw;
+    background-color: rgba(245, 245, 220, 0.911);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 1em;
+    overflow: hidden;
+
+    border: 2px solid rgba(35, 32, 13, 0.814);
+}
