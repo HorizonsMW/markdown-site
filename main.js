@@ -175,6 +175,10 @@ function showUpdates(itemToShow) {
                 if (titleOnDocument && updateOnDocument && linkOnDocument) {
                     titleOnDocument.innerHTML = titleData;
                     updateOnDocument.innerHTML = updateData;
+                    while (linkOnDocument.firstChild) {
+                        //remove children before appending new child
+                        linkOnDocument.firstChild.remove();
+                    }
                     linkOnDocument.append(viewLink);
                 } else {
                     console.log("Title and update body not found");
@@ -201,6 +205,10 @@ function showUpdates(itemToShow) {
                 if (titleOnDocument && updateOnDocument && linkOnDocument) {
                     titleOnDocument.innerHTML = titleData;
                     updateOnDocument.innerHTML = updateData;
+                    while (linkOnDocument.firstChild) {
+                        //remove children before appending new child
+                        linkOnDocument.firstChild.remove();
+                    }
                     linkOnDocument.append(viewLink);
                 } else {
                     console.log("Title and update body not found");
@@ -250,5 +258,9 @@ function generateUpdateLink(itemlink) {
     var generatedUpdateLink = document.createElement("a");
     generatedUpdateLink.setAttribute("href", itemlink);
     generatedUpdateLink.innerHTML = "View";
+    if(itemlink == undefined){
+        console.log("Blank link passed");
+        generatedUpdateLink.classList.add("d-none");
+    }
     return generatedUpdateLink;
 }
