@@ -4,12 +4,12 @@ Title: Tale
 Author: Brian Mulwa
 ---
 ##### Mentions: Milkyway, brown fur ball, 🪲, 💖, 👨🏾‍🔬📡
+
+
 (beep) 
 What the heck? Where are we? Is this what absolute void feels like? 
-
 ## Titan
 ##### The first of the colonies. 
-
 New dawn. Green horizon. The winds are at an astonishing speed of 100 miles an hour. Unbearable. Seven tries to keep his balance, stretching out his arm to hold on a nearby branch. Snap. He stumbles back into a rigid chest. He looks up, dark void eyes and a gruesome grin of drool and fangs stares back at him. For a minute there he loses his breath, face pale, like frost bite, eyes void of the energy to blink. Oh God! No! Cough. The winds blinding, he tries to find his feet, like a toddler ran over by a pup, the ground is all soggy, then he finally does. Growl. He turns back wiping his face, this is the second time he’d tripped off his feet. It’s getting to him, the fright, of being swept off the ground.
 
 ##### Silver Bell
