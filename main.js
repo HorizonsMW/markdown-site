@@ -101,6 +101,7 @@ function sendMessage() {
         //Gmail message
         var emailSubject = "bmulwa.netlify.app";
         var subjectEncoded = encodeURIComponent(emailSubject);
+
         var emailBody = "Greetings, " + userMessage + " %0D%0A%0D%0ARegards,%0D%0A" + user // %0D%0A - You can also use the URL encoding %0D%0A for line breaks in mailto links. - Bing
 
         var gmailLink = "mailto:bmulwa766@gmail.com?subject=" + subjectEncoded + "&body=" + emailBody;
@@ -146,7 +147,7 @@ function options() {
 
 function sharePage() {
     document.getElementById("moreOptionsButtons").classList.add("d-none");
-   // alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
+    // alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
     console.log("Share page");
 
     if (navigator.canShare()) {
@@ -295,7 +296,7 @@ function generateUpdateLink(itemlink) {
     var generatedUpdateLink = document.createElement("a");
     generatedUpdateLink.setAttribute("href", itemlink);
     generatedUpdateLink.innerHTML = "View";
-    generatedUpdateLink.classList.add("bg-light","p-3","rounded-pill");
+    generatedUpdateLink.classList.add("bg-light", "rounded-3","p-2");
 
     if (itemlink == undefined) {
         // if no link is passed via itemLink, then dont show link

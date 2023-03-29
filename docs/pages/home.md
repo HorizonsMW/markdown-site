@@ -28,7 +28,7 @@ with you on your next project.
             <h5 id="title"></h5>
             <p id="updateDate">date</p>
             <p id="update"></p> 
-            <div id="link"></div> 
+            <div id="link" class="d-flex align-items-center p-2 h-auto"></div> 
         </div>
         <button id="done" class="p-3 rounded-circle text-light m-0 border-0 d-none d-md-block" onclick="prevUpdate()"><img src="./assets/img/icons/icons8-next-page-100.png" alt="next-page" width="40px" ></button>
         <div class="d-flex justify-content-center">
