@@ -61,6 +61,21 @@ function sendMessage() {
     var user = document.getElementById('name').value;//Get user input
     var userMessage = document.getElementById('message').value;//Get user input
 
+    /////////////// clean links on repeated clicks
+
+    var link = document.getElementById("myLink"); //get host div to get tags in it
+    var oldLink = link.getElementsByTagName("a");// get a tags under myLink div
+
+    /**  var oldLink  = link.getElementsByTagName("a"); returns an HTMLCollection
+     * HTMLCollection is an array-like collection (list) of HTML elements. The elements in a collection can be accessed by index (starts at 0). The length property returns the number of elements in the collection. HTMLCollection items can be accessed by their name, id, or index numberHTMLCollection is always a live collection - Source: https://sl.bing.net/iGayou6Khoa
+     * To clear previous links on cancel, we need to iterate through the list removing each item
+    */
+
+    while (oldLink.length > 0) {
+        oldLink[0].remove();//remove old links
+    }
+    //////////////////////////
+
     if (user === "" || userMessage === "") {
         alert("Fields are required");//Fields cannot be empty
     } else {
@@ -70,7 +85,7 @@ function sendMessage() {
         document.getElementById("yourMessage").innerHTML = "Message: " + userMessage;
 
         document.getElementById("messageSender").classList.remove("d-none");//show confirmation popup, with sending link
-
+        //WhatsApp message
         var text = "Send";
         var a = document.createElement('a'); //create link element
         a.appendChild(document.createTextNode(text));//Set the display text of the link
@@ -80,8 +95,27 @@ function sendMessage() {
         var link = document.getElementById("myLink");//get host
         link.appendChild(a);//put link on host
 
-        console.log("Name: " + user + " Message: " + userMessage);
-        console.log(link);
+        // console.log("Name: " + user + " Message: " + userMessage); //development info purposes
+        // console.log(link);
+
+        //Gmail message
+        var emailSubject = "bmulwa.netlify.app";
+        var subjectEncoded = encodeURIComponent(emailSubject);
+        var emailBody = "Greetings, " + userMessage + " %0D%0A%0D%0ARegards,%0D%0A" + user // %0D%0A - You can also use the URL encoding %0D%0A for line breaks in mailto links. - Bing
+
+        var gmailLink = "mailto:bmulwa766@gmail.com?subject=" + subjectEncoded + "&body=" + emailBody;
+        var text = "eMail";
+        var a = document.createElement('a'); //create link element
+        a.appendChild(document.createTextNode(text));//Set the display text of the link
+        a.href = gmailLink; //add the HTML href to the link
+        a.target = "_blank";//link opens in new tab
+
+        var link = document.getElementById("myLink");//get host
+        link.appendChild(a);//put link on host
+
+        // console.log("Name: " + user + " Message: " + userMessage); //development info purposes
+        // console.log(gmailLink);
+
     }
 
     //document.body.appendChild(a);
@@ -143,6 +177,7 @@ function showUpdates(itemToShow) {
     console.log("Item to show is " + itemToShow);
 
     const titleOnDocument = document.getElementById("title");
+    const dateOnDocument = document.getElementById("updateDate");
     const updateOnDocument = document.getElementById("update");
     const linkOnDocument = document.getElementById("link");
 
@@ -161,25 +196,24 @@ function showUpdates(itemToShow) {
                 const titleData = data[itemToShow].title;
                 const updateData = data[itemToShow].update;
                 const linkData = data[itemToShow].link;
+                const dateData = data[itemToShow].date;
 
-                console.log(titleData);
+                /**console.log(titleData);
                 console.log(updateData);
-                console.log(linkData);
-
-                const titleOnDocument = document.getElementById("title");
-                const updateOnDocument = document.getElementById("update");
-                const linkOnDocument = document.getElementById("link");
+                console.log(linkData);*/ // for dev info purposes only
 
                 viewLink = generateUpdateLink(linkData);
 
-                if (titleOnDocument && updateOnDocument && linkOnDocument) {
+                if (titleOnDocument && updateOnDocument && linkOnDocument && dateOnDocument) {
                     titleOnDocument.innerHTML = titleData;
                     updateOnDocument.innerHTML = updateData;
+                    dateOnDocument.innerHTML = dateData;
                     while (linkOnDocument.firstChild) {
                         //remove children before appending new child
                         linkOnDocument.firstChild.remove();
                     }
                     linkOnDocument.append(viewLink);
+
                 } else {
                     console.log("Title and update body not found");
                     if (location.hash == "#home") { showUpdates(itemToShow); }
@@ -191,20 +225,20 @@ function showUpdates(itemToShow) {
                 const titleData = data[itemToShow].title;
                 const updateData = data[itemToShow].update;
                 const linkData = data[itemToShow].link;
+                const dateData = data[itemToShow].date;
 
-                console.log(titleData);
-                console.log(updateData);
-                console.log(linkData);
 
-                const titleOnDocument = document.getElementById("title");
-                const updateOnDocument = document.getElementById("update");
-                const linkOnDocument = document.getElementById("link");
+                //console.log(titleData);
+                //console.log(updateData);
+                //console.log(linkData);
 
                 viewLink = generateUpdateLink(linkData);
 
-                if (titleOnDocument && updateOnDocument && linkOnDocument) {
+                if (titleOnDocument && updateOnDocument && linkOnDocument && dateOnDocument) {
                     titleOnDocument.innerHTML = titleData;
                     updateOnDocument.innerHTML = updateData;
+                    dateOnDocument.innerHTML = dateData;
+
                     while (linkOnDocument.firstChild) {
                         //remove children before appending new child
                         linkOnDocument.firstChild.remove();
@@ -258,7 +292,9 @@ function generateUpdateLink(itemlink) {
     var generatedUpdateLink = document.createElement("a");
     generatedUpdateLink.setAttribute("href", itemlink);
     generatedUpdateLink.innerHTML = "View";
-    if(itemlink == undefined){
+    generatedUpdateLink.classList.add("bg-light","p-3","rounded-pill");
+
+    if (itemlink == undefined) {
         console.log("Blank link passed");
         generatedUpdateLink.classList.add("d-none");
     }

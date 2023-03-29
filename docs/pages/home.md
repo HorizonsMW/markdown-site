@@ -21,24 +21,20 @@ with you on your next project.
 
 #### Updates
 
-<div class = "row">
-
- 
-
-</div>
-
-
-
-
 <div class="d-grid m-2">
-     <div class="col d-grid d-md-flex justify-content-center m-2 p-2 home ">
-        <button id="done" class="col-sm-1 bg-success px-5 bg-opacity-75 text-light rounded-start m-0 border-0" onclick="nextUpdate()"><|</button>
-        <div class="col w-100 px-2">
+     <div class="col d-grid d-md-flex align-items-center m-2 p-2 home">
+        <button id="done" class="p-3 text-light rounded-circle m-0 border-0 d-none d-md-block" onclick="nextUpdate()"> <img src="./assets/img/icons/icons8-back-to-100.png" alt="previous-page" width="40px"></button>
+        <div class="col w-100 px-2 update m-2">
             <h5 id="title"></h5>
+            <p id="updateDate">date</p>
             <p id="update"></p> 
-            <p id="link"></p> 
+            <div id="link"></div> 
         </div>
-        <button id="done" class="col-sm-1 bg-success px-5  bg-opacity-75 rounded-end text-light m-0 border-0" onclick="prevUpdate()">|></button>
+        <button id="done" class="p-3 rounded-circle text-light m-0 border-0 d-none d-md-block" onclick="prevUpdate()"><img src="./assets/img/icons/icons8-next-page-100.png" alt="next-page" width="40px" ></button>
+        <div class="d-flex justify-content-center">
+            <button id="done" class="p-0 text-light rounded-circle m-1 border-0 d-md-none" onclick="nextUpdate()"> <img src="./assets/img/icons/icons8-back-to-100.png" alt="previous-page" width="40px"></button>
+            <button id="done" class="p-0 rounded-circle text-light m-1 border-0 d-md-none" onclick="prevUpdate()"> <img src="./assets/img/icons/icons8-next-page-100.png" alt="next-page" width="40px" ></button>
+        </div>
     </div>  
 </div>
 
