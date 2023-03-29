@@ -140,13 +140,13 @@ function abortMessage() {
     console.log(oldLink);
 }
 function options() {
-    console.log("Options in the house");
+    console.log("Options in the house");//when plus button is activated
     document.getElementById("moreOptionsButtons").classList.remove("d-none");
 }
 
 function sharePage() {
     document.getElementById("moreOptionsButtons").classList.add("d-none");
-    alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
+   // alert("Share function coming soon. Actually its all done, now I have to figure out why it does'nt work.")
     console.log("Share page");
 
     if (navigator.canShare()) {
@@ -161,8 +161,6 @@ function sharePage() {
 
             navigator.share(shareData);
 
-            console.log("MDN shared successfully");
-
         } catch (err) {
             console.log(`Error: ${err}`);
         }
@@ -171,12 +169,12 @@ function sharePage() {
     };
 
 }
-window.itemToShow = 0;
+window.itemToShow = 0; //Declare global variable itemToShow
 
 function showUpdates(itemToShow) {
     console.log("Item to show is " + itemToShow);
 
-    const titleOnDocument = document.getElementById("title");
+    const titleOnDocument = document.getElementById("title"); //fetch ids of HTML elements
     const dateOnDocument = document.getElementById("updateDate");
     const updateOnDocument = document.getElementById("update");
     const linkOnDocument = document.getElementById("link");
@@ -184,16 +182,17 @@ function showUpdates(itemToShow) {
     fetch('updates.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            //console.log(data);
 
             window.lengthOfJson = Object.keys(data).length;
 
             console.log("Length is " + lengthOfJson);
 
             if (itemToShow >= lengthOfJson) {
+                //when passed key is greater than length of updates json
                 this.itemToShow = lengthOfJson;
 
-                const titleData = data[itemToShow].title;
+                const titleData = data[itemToShow].title;//assign fetched data to variables
                 const updateData = data[itemToShow].update;
                 const linkData = data[itemToShow].link;
                 const dateData = data[itemToShow].date;
@@ -202,10 +201,10 @@ function showUpdates(itemToShow) {
                 console.log(updateData);
                 console.log(linkData);*/ // for dev info purposes only
 
-                viewLink = generateUpdateLink(linkData);
+                viewLink = generateUpdateLink(linkData); //use generateUpdateLink() function to create new link using data from json
 
                 if (titleOnDocument && updateOnDocument && linkOnDocument && dateOnDocument) {
-                    titleOnDocument.innerHTML = titleData;
+                    titleOnDocument.innerHTML = titleData; //append values to html elememnts if they're found
                     updateOnDocument.innerHTML = updateData;
                     dateOnDocument.innerHTML = dateData;
                     while (linkOnDocument.firstChild) {
@@ -216,6 +215,7 @@ function showUpdates(itemToShow) {
 
                 } else {
                     console.log("Title and update body not found");
+                    //when HTML elements have not been found, run the fuction again if location is home
                     if (location.hash == "#home") { showUpdates(itemToShow); }
                 }
 
@@ -260,12 +260,14 @@ function showUpdates(itemToShow) {
 });*/
 
 window.onload = function () {
+    //when the page loads
+    //do this...
     fetch('updates.json')
         .then(response => response.json())
         .then(data => {
-            console.log(data);
+            //console.log(data);
             lengthOfJson = Object.keys(data).length;
-            showUpdates(lengthOfJson);
+            showUpdates(lengthOfJson);//show the latest update
         });
 };
 
@@ -289,12 +291,14 @@ function prevUpdate() {
 }
 
 function generateUpdateLink(itemlink) {
+    //this fuction creates a link
     var generatedUpdateLink = document.createElement("a");
     generatedUpdateLink.setAttribute("href", itemlink);
     generatedUpdateLink.innerHTML = "View";
     generatedUpdateLink.classList.add("bg-light","p-3","rounded-pill");
 
     if (itemlink == undefined) {
+        // if no link is passed via itemLink, then dont show link
         console.log("Blank link passed");
         generatedUpdateLink.classList.add("d-none");
     }
