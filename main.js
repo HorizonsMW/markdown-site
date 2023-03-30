@@ -57,6 +57,7 @@ window.addEventListener("hashchange", function () {
             });
     }
 });
+
 function sendMessage() {
     var user = document.getElementById('name').value;//Get user input
     var userMessage = document.getElementById('message').value;//Get user input
@@ -87,13 +88,21 @@ function sendMessage() {
         document.getElementById("messageSender").classList.remove("d-none");//show confirmation popup, with sending link
         //WhatsApp message
         var text = "Send";
-        var a = document.createElement('a'); //create link element
-        a.appendChild(document.createTextNode(text));//Set the display text of the link
-        a.href = link; //add the HTML href to the link
-        a.target = "_blank";//link opens in new tab
+        var aWhatsApp = document.createElement('a'); //create link element
+        //aWhatsApp.appendChild(document.createTextNode(text));//Set the display text of the link
+        aWhatsApp.href = link; //add the HTML href to the link
+        aWhatsApp.target = "_blank";//link opens in new tab
+        aWhatsApp.setAttribute("alt", "WhatsApp");
+
+        var WhatsAppIcon = document.createElement("img");
+        WhatsAppIcon.setAttribute("src", "./assets/img/icons/icons8-whatsapp.svg");
+        WhatsAppIcon.setAttribute("height", "40px");
+        aWhatsApp.appendChild(WhatsAppIcon);//Set the display text of the link
+
+
 
         var link = document.getElementById("myLink");//get host
-        link.appendChild(a);//put link on host
+        link.appendChild(aWhatsApp);//put link on host
 
         // console.log("Name: " + user + " Message: " + userMessage); //development info purposes
         // console.log(link);
@@ -106,13 +115,19 @@ function sendMessage() {
 
         var gmailLink = "mailto:bmulwa766@gmail.com?subject=" + subjectEncoded + "&body=" + emailBody;
         var text = "eMail";
-        var a = document.createElement('a'); //create link element
-        a.appendChild(document.createTextNode(text));//Set the display text of the link
-        a.href = gmailLink; //add the HTML href to the link
-        a.target = "_blank";//link opens in new tab
+        var aGmail = document.createElement('a'); //create link element
+        // a.appendChild(document.createTextNode(text));//Set the display text of the link
+        aGmail.href = gmailLink; //add the HTML href to the link
+        aGmail.target = "_blank";//link opens in new tab
+        aGmail.setAttribute("alt", "email");
+
+        var gmailIcon = document.createElement("img");
+        gmailIcon.setAttribute("src", "./assets/img/icons/icons8-gmail-logo.svg");
+        gmailIcon.setAttribute("height", "40px");
+        aGmail.appendChild(gmailIcon);//Set the display text of the link
 
         var link = document.getElementById("myLink");//get host
-        link.appendChild(a);//put link on host
+        link.appendChild(aGmail);//put link on host
 
         // console.log("Name: " + user + " Message: " + userMessage); //development info purposes
         // console.log(gmailLink);
@@ -296,7 +311,7 @@ function generateUpdateLink(itemlink) {
     var generatedUpdateLink = document.createElement("a");
     generatedUpdateLink.setAttribute("href", itemlink);
     generatedUpdateLink.innerHTML = "View";
-    generatedUpdateLink.classList.add("bg-light", "rounded-3","p-2");
+    generatedUpdateLink.classList.add("bg-light", "rounded-3", "p-2");
 
     if (itemlink == undefined) {
         // if no link is passed via itemLink, then dont show link
