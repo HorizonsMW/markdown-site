@@ -22,7 +22,7 @@
     },"5":{
         "date":"2023-03-31",
         "title":"Twitter embedded timeline",
-        "update":"I wanted to have my twitter profile's timeline on this homepage, for twitter updates, however the guy won't load when embedded in a markdown document. When I tested it on clean HTML, it worked fine. I have filled a feedback form and sent it to Twitter though. Meanwhile, I will see what I can do to make it work. For those interested on checking out twitter widjets and how they work, I'll live a link below for the publishing website. You can read more at <a href='https://developer.twitter.com/'>Twitter Developer Platform</a>",
+        "update":"I wanted to have my twitter profile's timeline on this homepage, for twitter updates, however the guy won't load when embedded in a markdown document. When I tested it on clean HTML, it worked fine. I have filled a feedback form and sent it to Twitter though. Meanwhile, I will see what I can do to make it work. For those interested on checking out twitter widgets and how they work, I'll live a link below for the publishing website. You can read more at <a href='https://developer.twitter.com/'>Twitter Developer Platform</a>",
         "link":"https://publish.twitter.com/"
     }
 }
