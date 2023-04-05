@@ -30,9 +30,9 @@ with you on your next project.
      <div class="col d-grid d-md-flex align-items-center m-2 p-2 home">
         <button id="done" class="p-3 text-light rounded-circle m-0 border-0 d-none d-md-block" onclick="nextUpdate()"> <img src="./assets/img/icons/icons8-back-to-100.png" alt="previous-page" width="40px"></button>
         <div class="col w-100 px-2 update m-2">
-            <h5 id="title"></h5>
+            <h5 id="title">title</h5>
             <p id="updateDate">date</p>
-            <p id="update"></p> 
+            <p id="update">update</p> 
             <div id="link" class="d-flex align-items-center p-2 h-auto"></div> 
         </div>
         <button id="done" class="p-3 rounded-circle text-light m-0 border-0 d-none d-md-block" onclick="prevUpdate()"><img src="./assets/img/icons/icons8-next-page-100.png" alt="next-page" width="40px" ></button>

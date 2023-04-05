@@ -164,3 +164,14 @@ footer a {
     padding: 10px 5px;
     min-height: 400px;
 }
+#newsContent{
+    border-radius: 1em;
+    border: 3px solid rgba(35, 32, 13, 0.814);
+    padding: 10px 5px;
+}
+.update code{
+    background-color: #E0F4F4;
+    color: #541434;
+    padding: 1px 2px;
+    border-radius: .4em;
+}

@@ -17,6 +17,18 @@ function getContent(fragmentId, callback) {
     } else if (fragmentId.charAt(0) === "g") {
         console.log("Gems town");
         callback(`<md-block src="./docs/gems/${fragmentId}.md" id="md-block-app"></md-block>`);
+    } else if (fragmentId.charAt(0) === "n") {
+        // callback(`<md-block src="./docs/news/${fragmentId}.md" id="md-block-app"></md-block>`);
+        // changed to html to try and locate ids, via md no ids can be located
+        /*var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("app").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "./docs/news/" + window.location.hash.substring(1) + ".html", true);
+        xhttp.send();*/
+        getHTMLElements();
     } else {
         callback(page);
     }
@@ -65,7 +77,7 @@ function sendMessage() {
     /////////////// clean links on repeated clicks
 
     var link = document.getElementById("myLink"); //get host div to get tags in it
-    var oldLink = link.getElementsByTagName("a");// get a tags under myLink div
+    var oldLink = link.getElementsByTagName("a"); // get a tags under myLink div
 
     /**  var oldLink  = link.getElementsByTagName("a"); returns an HTMLCollection
      * HTMLCollection is an array-like collection (list) of HTML elements. The elements in a collection can be accessed by index (starts at 0). The length property returns the number of elements in the collection. HTMLCollection items can be accessed by their name, id, or index numberHTMLCollection is always a live collection - Source: https://sl.bing.net/iGayou6Khoa

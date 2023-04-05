@@ -24,5 +24,10 @@
         "title":"Twitter embedded timeline",
         "update":"I wanted to have my twitter profile's timeline on this homepage, for twitter updates, however the guy won't load when embedded in a markdown document. When I tested it on clean HTML, it worked fine. I have filled a feedback form and sent it to Twitter though. Meanwhile, I will see what I can do to make it work. For those interested on checking out twitter widgets and how they work, I'll live a link below for the publishing website. You can read more at <a href='https://developer.twitter.com/'>Twitter Developer Platform</a>",
         "link":"https://publish.twitter.com/"
+    },"6":{
+        "date":"2023-04-05",
+        "title":"News is finally happening",
+        "update":"A'ight, finally. This has been the trickiest one to pull through yet. Its all JS from the fetching of the <md-span>`md`</md-span> files to the rendering. Just finished the bare minimum but maan thats hours of thinking to make it what it is now. I need bug reports and perfomance analysis so I'll really appreciate your feedback.  <md-span>`PS: Actual content is coming soon, keep the tab open.`</md-span>",
+        "link":"#news"
     }
 }
