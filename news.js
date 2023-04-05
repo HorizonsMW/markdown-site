@@ -14,13 +14,14 @@ window.addEventListener("hashchange", () => {
 
 
 function news() {
+  // 
   const folderPath = "./docs/news/";
   const folderPath2 = "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
 
   const files = [];
   const xhr = new XMLHttpRequest();
-  xhr.open("GET", folderPath || "GET",folderPath2);
-  
+  xhr.open("GET", folderPath);
+
 
   xhr.onload = function () {
     const parser = new DOMParser();
@@ -71,11 +72,23 @@ function getHTMLElements(pathToFile) {
   newsContent.appendChild(mdBlock);
   //news navigation buttons
   const newsNav = document.createElement("div");
-  newsNav.classList.add("row", "d-flex", "justify-content-between");
+  newsNav.classList.add("row");
+
+  const newsNavCol = document.createElement("div");
+  newsNavCol.classList.add("col", "d-flex", "justify-content-between");
+
   const nextContent = document.createElement("button");
-  nextContent.append("Next");
+  nextContent.classList.add("rounded-circle", "p-2", "border-0");
+  img = document.createElement("img");
+  img.setAttribute("src", "./assets/img/icons/icons8-back-to-100.png");
+  img.setAttribute("width", "40px");
+  nextContent.appendChild(img);
   const prevContent = document.createElement("button");
-  prevContent.append("Prev");
+  prevContent.classList.add("rounded-circle", "p-2", "border-0");
+  img2 = document.createElement("img");
+  img2.setAttribute("src", "./assets/img/icons/icons8-next-page-100.png");
+  img2.setAttribute("width", "40px");
+  prevContent.appendChild(img2);
 
   nextContent.addEventListener("click", () => {
     nextNews();
@@ -84,8 +97,10 @@ function getHTMLElements(pathToFile) {
     prevNews();
   });
 
-  newsNav.appendChild(nextContent);
-  newsNav.appendChild(prevContent);
+  newsNavCol.appendChild(nextContent);
+  newsNavCol.appendChild(prevContent);
+  newsNav.appendChild(newsNavCol);
+
 
   newsContent.appendChild(newsNav);
 
