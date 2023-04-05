@@ -1,4 +1,5 @@
 console.log("NEWS JS LOADED");
+news();
 
 if (location.hash === "#news") {
   console.log("news section snodlscknj");
