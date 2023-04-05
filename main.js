@@ -19,16 +19,6 @@ function getContent(fragmentId, callback) {
         callback(`<md-block src="./docs/gems/${fragmentId}.md" id="md-block-app"></md-block>`);
     } else if (fragmentId.charAt(0) === "n") {
         // callback(`<md-block src="./docs/news/${fragmentId}.md" id="md-block-app"></md-block>`);
-        // changed to html to try and locate ids, via md no ids can be located
-        /*var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("app").innerHTML = this.responseText;
-            }
-        };
-        xhttp.open("GET", "./docs/news/" + window.location.hash.substring(1) + ".html", true);
-        xhttp.send();*/
-        getHTMLElements();
     } else {
         callback(page);
     }

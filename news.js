@@ -15,10 +15,18 @@ window.addEventListener("hashchange", () => {
 
 function news() {
   const folderPath = "./docs/news/";
+  const folderPath2 = "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
+
   const files = [];
   const xhr = new XMLHttpRequest();
+
   xhr.open("GET", folderPath);
+  
+
   xhr.onload = function () {
+    if (xhr.status === 404) {
+      xhr.open("GET", folderPath2);
+    }
     const parser = new DOMParser();
     const htmlDoc = parser.parseFromString(xhr.responseText, "text/html");
     const links = htmlDoc.getElementsByTagName("a");
