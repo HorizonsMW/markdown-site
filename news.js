@@ -28,7 +28,7 @@ function news() {
       }
     }
     //files in an array
-    //console.log(files);
+    console.log(files);
     window.files = files;
 
     console.log("File 1 " + files[0]);
