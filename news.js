@@ -1,28 +1,26 @@
 console.log("NEWS JS LOADED");
-news();
 
-if (location.hash === "#news") {
-  console.log("news section snodlscknj");
+/*if (location.hash === "#news") {
+  console.log("news section");
   news();
 }
 
 window.addEventListener("hashchange", () => {
   if (location.hash === "#news") {
-    console.log("news section snodlscknj");
+    console.log("news section");
     news();
   }
-});
-
+});*/
 
 function news() {
-  // 
-  const folderPath = "/docs/news/";
-  const folderPath2 = "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
+  //
+  const folderPath = "./docs/news/";
+  const folderPath2 =
+    "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
 
   const files = [];
   const xhr = new XMLHttpRequest();
   xhr.open("GET", folderPath);
-
 
   xhr.onload = function () {
     const parser = new DOMParser();
@@ -45,7 +43,6 @@ function news() {
 
     var pathToNews = files[mostRecentNewsPost];
     getHTMLElements(pathToNews);
-
   };
   xhr.send();
 }
@@ -102,7 +99,6 @@ function getHTMLElements(pathToFile) {
   newsNavCol.appendChild(prevContent);
   newsNav.appendChild(newsNavCol);
 
-
   newsContent.appendChild(newsNav);
 
   //ads on the right
@@ -132,7 +128,6 @@ function nextNews() {
     var pathToNews = files[this.itemPosition];
     getHTMLElements(pathToNews);
   }
-
 }
 
 function prevNews() {
@@ -151,6 +146,4 @@ function prevNews() {
     console.log("path is " + pathToNews);
     getHTMLElements(pathToNews);
   }
-
 }
-

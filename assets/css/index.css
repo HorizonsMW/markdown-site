@@ -1,61 +1,61 @@
 * {
-    overflow-x: hidden;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
-    background-image: url(https://bing.biturl.top/?resolution=1366&format=image&index=0&mkt=random);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url(https://bing.biturl.top/?resolution=1366&format=image&index=0&mkt=random);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #btnGroup {
-    z-index: 3;
-    right: 20px;
-    width: 10em;
-    background-color: rgba(245, 245, 220, 0.623);
-    padding-left: 10px;
-    padding-right: 0px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 1em;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    border: 2px solid rgba(35, 32, 13, 0.814);
-
+  z-index: 3;
+  right: 20px;
+  width: 10em;
+  background-color: rgba(245, 245, 220, 0.623);
+  padding-left: 10px;
+  padding-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 1em;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  border: 2px solid rgba(35, 32, 13, 0.814);
 }
 
 #btnGroup img {
-    width: 32px;
+  width: 32px;
 }
 
 #btnGroup a {
-    text-decoration: none;
-    color: rgba(35, 32, 13, 0.814);
+  text-decoration: none;
+  color: rgba(35, 32, 13, 0.814);
 }
 
 .custom-link a {
-    text-decoration: none;
-    margin: 2px;
-    font-size: inherit;
+  text-decoration: none;
+  margin: 2px;
+  font-size: inherit;
 }
 
 .custom-link img {
-    width: 30px;
+  width: 30px;
 }
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    color: white;
-    height: auto;
-    z-index: 2;
-    padding: 5px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  height: auto;
+  z-index: 2;
+  padding: 5px;
 }
 
 header p,
@@ -64,114 +64,113 @@ h2,
 h3,
 h4,
 h5 {
-    margin: 0;
+  margin: 0;
 }
 
 .content-section {
-    margin-top: 100px;
-    z-index: 1;
-    background-color: rgba(255, 255, 255, 0.63);
+  margin-top: 100px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.63);
 }
 
 footer .row h2 {
-    text-align: center;
+  text-align: center;
 }
 
 .home a {
-    text-decoration: none;
-    font-size: 102%;
-    color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 102%;
+  color: rgb(0, 0, 0);
 }
 
 .home img {
-    height: 40px;
+  height: 40px;
 }
 
 footer a {
-    text-decoration: none;
-    color: rgb(248, 248, 135);
+  text-decoration: none;
+  color: rgb(248, 248, 135);
 }
 
 #messageSender {
-    z-index: 3;
-    width: 20em;
-    background-color: rgba(245, 245, 220, 0.911);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 1em;
-    overflow: hidden;
-    position: fixed;
-    top: 25%;
-    border: 2px solid rgba(35, 32, 13, 0.814);
+  z-index: 3;
+  width: 20em;
+  background-color: rgba(245, 245, 220, 0.911);
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 1em;
+  overflow: hidden;
+  position: fixed;
+  top: 25%;
+  border: 2px solid rgba(35, 32, 13, 0.814);
 }
 
-
 #myLink a {
-    text-decoration: none;
-    color: beige;
-    float: right;
-    background-color: #19875400;
-    padding: 2px 10px;
-    border-radius: 15px;
+  text-decoration: none;
+  color: beige;
+  float: right;
+  background-color: #19875400;
+  padding: 2px 10px;
+  border-radius: 15px;
 }
 
 .input input,
 .input textarea {
-    width: 90%;
-    border: 2px solid rgba(35, 32, 13, 0.814);
+  width: 90%;
+  border: 2px solid rgba(35, 32, 13, 0.814);
 }
 
 #moreOptions {
-    z-index: 4;
-    width: 300px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    overflow: hidden;
-    position: fixed;
-    bottom: 30px;
-    right: -250px;
+  z-index: 4;
+  width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 30px;
+  right: -250px;
 }
 
 #moreOptionsButtons {
-    z-index: 4;
-    width: 300px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    overflow: hidden;
-    position: fixed;
-    bottom: 80px;
-    right: -250px;
+  z-index: 4;
+  width: 300px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  position: fixed;
+  bottom: 80px;
+  right: -250px;
 }
 
 #moreOptionsButtons img {
-    width: 30px;
+  width: 30px;
 }
 
 .bing {
-    max-width: 90vw;
-    height: auto;
+  max-width: 90vw;
+  height: auto;
 }
 
-.update{
-    border-radius: 1em;
-    border: 3px solid rgba(35, 32, 13, 0.814);
-    padding: 10px 5px;
-    min-height: 400px;
+.update {
+  border-radius: 1em;
+  border: 3px solid rgba(35, 32, 13, 0.814);
+  padding: 10px 5px;
+  min-height: 400px;
 }
-#newsContent{
-    border-radius: 1em;
-    border: 3px solid rgba(35, 32, 13, 0.814);
-    padding: 10px 5px;
+#newsContent {
+  border-radius: 1em;
+  border: 3px solid rgba(35, 32, 13, 0.814);
+  padding: 10px 5px;
 }
-.update code{
-    background-color: #E0F4F4;
-    color: #541434;
-    padding: 1px 2px;
-    border-radius: .4em;
+.update code {
+  background-color: #e0f4f4;
+  color: #541434;
+  padding: 1px 2px;
+  border-radius: 0.4em;
 }

@@ -7,8 +7,8 @@ information and more. I hope you enjoy browsing through my work and learning mor
 feedback, please feel free to reach out to me via email or social media. I would love to hear from you and collaborate
 with you on your next project.
 
-
 ### Explore
+
 <div class="d-flex justify-content-center">
     <div class="col d-flex justify-content-center home">
         <md-block>
@@ -17,8 +17,7 @@ with you on your next project.
     </div>
 </div>
 
-***
-
+---
 
 #### Updates
 
@@ -43,9 +42,10 @@ with you on your next project.
     </div>  
 </div>
 
-***
+---
 
 #### Say Something
+
 <div class="d-grid m-2">
     <div class="col d-flex justify-content-center m-0 p-2 input">
      <input class="rounded-pill p-2" type="text" id="name" name="name" required minlength="4" maxlength="20" size="10" placeholder="Your name">
@@ -58,7 +58,3 @@ with you on your next project.
     </div>
    
 </div>
-
-
-
-

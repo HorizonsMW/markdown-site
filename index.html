@@ -1,262 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>B Mulwa</title>
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
-    <link rel="icon" type="image/svg+xml" href="./assets/img/icons/icons8-get-started-app.svg">
+    <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="./assets/img/icons/icons8-get-started-app.svg"
+    />
     <script src="./assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="module" src="https://md-block.verou.me/md-block.js"></script>
     <script type="module" src="./node_modules/md-block/md-block.js"></script>
     <script src="main.js"></script>
     <script src="./docs/blog/blog.js"></script>
     <script src="./news.js"></script>
-
-    
-</head>
-
-<body>
+  </head>
+  <body>
     <header>
-        <SCript>
-            function time() {
-                const date = new Date();
-                const shortDate = date.toLocaleDateString('en-UK').toString();
-                const hoursAndMinutes = date.toLocaleString('en-UK', { hour: 'numeric', minute: 'numeric' });
+      <script>
+        function time() {
+          const date = new Date();
+          const shortDate = date.toLocaleDateString("en-UK").toString();
+          const hoursAndMinutes = date.toLocaleString("en-UK", {
+            hour: "numeric",
+            minute: "numeric",
+          });
 
-                document.getElementById("date").innerHTML = shortDate;
-                document.getElementById("time").innerHTML = hoursAndMinutes;
-            }
-            setInterval(time, 1000);
-            function currentWeather() {
-                document.getElementsByClassName("currentWeatherIcon");
-            }
-
-        </SCript>
-        <div class="container p-3 bg-black bg-opacity-75 rounded-3">
-            <div class="row d-flex align-items-center text-light">
-                <div class="col">
-                    <h4 class="m-0" id="currentPage"></h4>
-                </div>
-                <div class="col d-flex justify-content-center align-items-center">
-                    <p class=" d-none d-md-flex justify-content-center  align-items-center" id="date"></p><span
-                        class="mx-1" id="time"></span>
-                </div>
-                <div class="col d-flex justify-content-end align-items-end custom-link">
-                    <a class="m-0" id="btnMenu" onclick="menu()"> <img src="./assets/img/icons/icons8-menu.svg"
-                            alt="Menu"> </a>
-                </div>
-            </div>
+          document.getElementById("date").innerHTML = shortDate;
+          document.getElementById("time").innerHTML = hoursAndMinutes;
+        }
+        setInterval(time, 1000);
+        function currentWeather() {
+          document.getElementsByClassName("currentWeatherIcon");
+        }
+      </script>
+      <div class="container p-3 bg-black bg-opacity-75 rounded-3">
+        <div class="row d-flex align-items-center text-light">
+          <div class="col">
+            <h4 class="m-0" id="currentPage"></h4>
+          </div>
+          <div class="col d-flex justify-content-center align-items-center">
+            <p
+              class="d-none d-md-flex justify-content-center align-items-center"
+              id="date"
+            ></p>
+            <span class="mx-1" id="time"></span>
+          </div>
+          <div
+            class="col d-flex justify-content-end align-items-end custom-link"
+          >
+            <a class="m-0" id="btnMenu" onclick="menu()">
+              <img src="./assets/img/icons/icons8-menu.svg" alt="Menu" />
+            </a>
+          </div>
         </div>
+      </div>
     </header>
     <!--Menu section-->
     <div class="row d-none m-0 mt-5 m-md-5" id="btnGroup">
-        <div class="row d-flex justify-content-end p-0">
-            <h4 class="btn-close link-danger text-danger" id="btnCloseMenu" onclick="closeMenu()"></h4>
+      <div class="row d-flex justify-content-end p-0">
+        <h4
+          class="btn-close link-danger text-danger"
+          id="btnCloseMenu"
+          onclick="closeMenu()"
+        ></h4>
+      </div>
+      <div class="row p-0">
+        <div class="col">
+          <h5 class="m-0">
+            <a href="#home" onclick="closeMenu()"
+              ><img src="./assets/img/icons/icons8-home.svg" alt="Home" /><span
+                >Home</span
+              ></a
+            >
+          </h5>
+          <md-block>***</md-block>
+          <h5 class="m-0">
+            <a href="#contact" onclick="closeMenu()"
+              ><img
+                src="./assets/img/icons/icons8-contacts.svg"
+                alt="Contact"
+              /><span>Contact</span></a
+            >
+          </h5>
+          <md-block>***</md-block>
+          <h5 class="m-0">
+            <a href="#about" onclick="closeMenu()"
+              ><img src="./assets/img/icons/icons8-info.svg" alt="About" /><span
+                >About</span
+              ></a
+            >
+          </h5>
+          <md-block>***</md-block>
+          <h5 class="m-0">
+            <a href="#blog" onclick="closeMenu()"
+              ><img
+                src="./assets/img/icons/icons8-blogger.svg"
+                alt="Blogger"
+              /><span>Blog</span></a
+            >
+          </h5>
+          <md-block>***</md-block>
+          <h5 class="m-0">
+            <a href="#news" onclick="closeMenu()"
+              ><img src="./assets/img/icons/icons8-news.svg" alt="News" /><span
+                >News</span
+              ></a
+            >
+          </h5>
+          <md-block>***</md-block>
         </div>
-        <div class="row p-0">
-            <div class="col">
-                <h5 class="m-0"><a href="#home" onclick="closeMenu()"><img src="./assets/img/icons/icons8-home.svg"
-                            alt="Home"><span>Home</span></a></h5>
-                <md-block>***</md-block>
-                <h5 class="m-0"><a href="#contact" onclick="closeMenu()"><img
-                            src="./assets/img/icons/icons8-contacts.svg" alt="Contact"><span>Contact</span></a>
-                </h5>
-                <md-block>***</md-block>
-                <h5 class="m-0"> <a href="#about" onclick="closeMenu()"><img src="./assets/img/icons/icons8-info.svg"
-                            alt="About"><span>About</span></a>
-                </h5>
-                <md-block>***</md-block>
-                <h5 class="m-0"><a href="#blog" onclick="closeMenu()"><img src="./assets/img/icons/icons8-blogger.svg"
-                            alt="Blogger"><span>Blog</span></a>
-                </h5>
-                <md-block>***</md-block>
-                <h5 class="m-0"><a href="#news" onclick="closeMenu()"><img src="./assets/img/icons/icons8-news.svg"
-                            alt="News"><span>News</span></a>
-                </h5>
-                <md-block>***</md-block>
-            </div>
-        </div>
+      </div>
     </div>
     <!-- Send message pop up-->
     <div class="container w-100 d-flex justify-content-center">
-        <div class="row m-0  d-none" id="messageSender">
-            <div class="col">
-                <div class="d-flex justify-content-end">
-                    <a class="btn-close bg-danger" onclick="abortMessage()"></a>
-                </div>
-                <md-block>
-                    #### Confirm Message
-                    ***
-                </md-block>
-                <p id="yourName">yourName</p>
-                <p class="text-break" id="yourMessage">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Adipisci, dolore? Ullam,
-                    nesciunt officia aperiam fugiat dolores ad. Repellat aspernatur error architecto voluptatem aliquid,
-                    totam expedita incidunt quia sint eaque iste!</p>
-                <div class="p-2 rounded-3" id="myLink">
-
-                </div>
-            </div>
+      <div class="row m-0 d-none" id="messageSender">
+        <div class="col">
+          <div class="d-flex justify-content-end">
+            <a class="btn-close bg-danger" onclick="abortMessage()"></a>
+          </div>
+          <md-block> #### Confirm Message *** </md-block>
+          <p id="yourName">yourName</p>
+          <p class="text-break" id="yourMessage">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+            dolore? Ullam, nesciunt officia aperiam fugiat dolores ad. Repellat
+            aspernatur error architecto voluptatem aliquid, totam expedita
+            incidunt quia sint eaque iste!
+          </p>
+          <div class="p-2 rounded-3" id="myLink"></div>
         </div>
+      </div>
     </div>
 
     <!-- Plus Icon - more options-->
     <div class="container d-flex justify-content-center">
-        <div class="row m-0 mx-md-5 p-0" id="moreOptions">
-            <div class="col p-0">
-                <div class="d-flex justify-content-start bg-success bg-opacity-75 rounded-pill p-1">
-                    <a class="" onclick="options()">
-                        <img src="./assets/img/icons/icons8-plus.svg" alt="" width="40px">
-                    </a>
-                </div>
-            </div>
+      <div class="row m-0 mx-md-5 p-0" id="moreOptions">
+        <div class="col p-0">
+          <div
+            class="d-flex justify-content-start bg-success bg-opacity-75 rounded-pill p-1"
+          >
+            <a class="" onclick="options()">
+              <img
+                src="./assets/img/icons/icons8-plus.svg"
+                alt=""
+                width="40px"
+              />
+            </a>
+          </div>
         </div>
-        <div class="row m-0 mx-md-5 p-0 d-none" id="moreOptionsButtons">
-            <div class="col p-0">
-                <div class="d-grid justify-content-start p-1 bg-body bg-opacity-75 rounded-pill ">
-                    <button class="link-primary border-0 bg-transparent" id="shareButton" onclick="sharePage()">
-                        <img class="" src="./assets/img/icons/icons8-share.svg" alt="Share">
-                    </button>
-                </div>
-            </div>
+      </div>
+      <div class="row m-0 mx-md-5 p-0 d-none" id="moreOptionsButtons">
+        <div class="col p-0">
+          <div
+            class="d-grid justify-content-start p-1 bg-body bg-opacity-75 rounded-pill"
+          >
+            <button
+              class="link-primary border-0 bg-transparent"
+              id="shareButton"
+              onclick="sharePage()"
+            >
+              <img
+                class=""
+                src="./assets/img/icons/icons8-share.svg"
+                alt="Share"
+              />
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!--Content section-->
     <section class="d-flex justify-content-center p-2">
-        <div class="container bg-opacity-75 rounded-3 content-section">
-            <div class="row pt-3" id="app">
-            </div>
-            <script src="main.js"></script>
-        </div>
-    <!----->
-
+      <div class="container bg-opacity-75 rounded-3 content-section">
+        <div class="row pt-3" id="app"></div>
+        <script src="main.js"></script>
+      </div>
+      <!----->
     </section>
 
     <!--
         Weather
     -->
     <!--Twitter-->
- 
+
     <footer class="d-flex justify-content-center">
+      <div
+        class="container m-2 rounded-3 bg-black bg-opacity-75 text-light p-2"
+      >
+        <!---->
+        <div class="row d-block d-md-flex">
+          <div class="col">
+            <md-block>
+              ## About Us 
+              #### The Team Just me, and some generous GitHub devs
+            </md-block>
+          </div>
+          <div class="col bg-black bg-opacity-75 rounded-3">
+            <md-block>
+              ## Contact Us 
+              Email: mw711990838@gmail.com || bmulwa766@gmail.com
+              Phone: [254 711 990838](tel:+254711990838) WhatsApp:
+              [254711990838](https://api.whatsapp.com/send/?phone=254711990838&text=&type=phone_number&app_absent=0)
+            </md-block>
+          </div>
+          <div class="col">
+            <md-block>
+              ## Legal 
+              ### Sources 
+              Bing wallpaper set from this github
+              [repo](https://github.com/TimothyYe/bing-wallpaper.git). Markdown
+              rendered using
+              [md-block](https://github.com/LeaVerou/md-block.git). All icons
+              have been obtained from [Icons8](https://icons8.com), more
+              information about specific icons is in the
+              [code](https://github.com/HorizonsMW/markdown-site.git).
+            </md-block>
+            <div class="d-none">
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter"
+                >Twitter</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-        <div class="container m-2 rounded-3 bg-black bg-opacity-75 text-light p-2">
-            <!---->
-            <div class="row d-block d-md-flex">
-                <div class="col">
-                    <md-block>
-                        ## About Us
-                        ### The Team
-                        Just me, and some generous GitHub devs
-                    </md-block>
-                </div>
-                <div class="col bg-black bg-opacity-75 rounded-3">
-                    <md-block>
-                        ## Contact Us
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin"
+                >LinkedIn</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-                        Email: mw711990838@gmail.com || bmulwa766@gmail.com
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/wFfu6zXx15Yk/home"
+                >Home</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-                        Phone: [254 711 990838](tel:+254711990838)
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/ssvbWITVTVC5/contacts"
+                >Contacts</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-                        WhatsApp:
-                        [254711990838](https://api.whatsapp.com/send/?phone=254711990838&text=&type=phone_number&app_absent=0)
-                    </md-block>
-                </div>
-                <div class="col">
-                    <md-block>
-                        ## Legal
-                        ### Sources
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/W5To6Q3gjDiK/news"
+                >News</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-                        Bing wallpaper set from this github [repo](https://github.com/TimothyYe/bing-wallpaper.git).
-                        Markdown rendered using [md-block](https://github.com/LeaVerou/md-block.git).
-                        All icons have been obtained from [Icons8](https://icons8.com), more information about specific
-                        icons is in the [code](https://github.com/HorizonsMW/markdown-site.git).
-                    </md-block>
-                    <div class="d-none">
-                        <a target="_blank" href="https://icons8.com/icon/5MQ0gPAYYx7a/twitter">Twitter</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/65072/blogger"
+                >Blogger</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-                        <a target="_blank" href="https://icons8.com/icon/xuvGCOXi8Wyg/linkedin">LinkedIn</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/MmupZtPbnw66/menu"
+                >Menu</a
+              >
+              icon by
+              <a rel="noopener" target="_blank" href="https://icons8.com"
+                >Icons8</a
+              >
 
-                        <a target="_blank" href="https://icons8.com/icon/wFfu6zXx15Yk/home">Home</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-
-                        <a target="_blank" href="https://icons8.com/icon/ssvbWITVTVC5/contacts">Contacts</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-
-                        <a target="_blank" href="https://icons8.com/icon/W5To6Q3gjDiK/news">News</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-
-                        <a target="_blank" href="https://icons8.com/icon/65072/blogger">Blogger</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-
-                        <a target="_blank" href="https://icons8.com/icon/MmupZtPbnw66/menu">Menu</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-
-                        <a target="_blank" href="https://icons8.com/icon/VQOfeAx5KWTK/info">Info</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/16713/whatsapp">WhatsApp</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/OUIi5nqGLmlL/mailbox">Mailbox</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/AZOZNnY73haj/github">GitHub</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/4aFn3qEdMNQO/get-started-app">Get Started
-                            App</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/Ygov9LJC2LzE/document">Document</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/qZ1FibjKOsRJ/upload-to-the-cloud">Upload to the
-                            Cloud</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/aWZy3jlAFSa9/plus">Plus</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/fe3NTBhh8IKg/share">Share</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/7cBzQPAwxKL1/double-up">Double Up</a> icon by
-                        <a target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/dFwKnb0cfxNs/next-page">Next page</a> icon by
-                        <a target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/sAY95WMMZ3DD/back-to">Back To</a> icon by <a
-                            target="_blank" href="https://icons8.com">Icons8</a>
-                        <a target="_blank" href="https://icons8.com/icon/ho8QlOYvMuG3/gmail-logo">Gmail Logo</a> icon by
-                        <a target="_blank" href="https://icons8.com">Icons8</a>
-
-                    </div>
-                    </p>
-                </div>
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/VQOfeAx5KWTK/info"
+                >Info</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/16713/whatsapp"
+                >WhatsApp</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/OUIi5nqGLmlL/mailbox"
+                >Mailbox</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/AZOZNnY73haj/github"
+                >GitHub</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/4aFn3qEdMNQO/get-started-app"
+                >Get Started App</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/Ygov9LJC2LzE/document"
+                >Document</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/qZ1FibjKOsRJ/upload-to-the-cloud"
+                >Upload to the Cloud</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/aWZy3jlAFSa9/plus"
+                >Plus</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/fe3NTBhh8IKg/share"
+                >Share</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/7cBzQPAwxKL1/double-up"
+                >Double Up</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/dFwKnb0cfxNs/next-page"
+                >Next page</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/sAY95WMMZ3DD/back-to"
+                >Back To</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
+              <a
+                target="_blank"
+                rel="noopener"
+                href="https://icons8.com/icon/ho8QlOYvMuG3/gmail-logo"
+                >Gmail Logo</a
+              >
+              icon by
+              <a target="_blank" rel="noopener" href="https://icons8.com"
+                >Icons8</a
+              >
             </div>
-            <div class="d-flex justify-content-center">
-                <p class="mx-2">
-                    <span>
-                        Buy me a ☕
-                        <md-span>
-                            [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=ZJ7765ZDCZ9LG)
-                        </md-span>
-                    </span>
-                </p>
-                <p>
-                    Copyright © 2023
-                </p>
-            </div>
+          </div>
         </div>
+        <div class="d-flex justify-content-center">
+          <p class="mx-2">
+            <span>
+              Buy me a ☕
+              <md-span>
+                [![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=ZJ7765ZDCZ9LG)
+              </md-span>
+            </span>
+          </p>
+          <p>Copyright © 2023</p>
+        </div>
+      </div>
     </footer>
     <script>
-        function menu() {
-            console.log("Menu");
-            let btnGroup = document.getElementById("btnGroup");
-            btnGroup.classList.remove("d-none");
-            btnGroup.classList.add("d-flex");
-        }
+      function menu() {
+        console.log("Menu");
+        let btnGroup = document.getElementById("btnGroup");
+        btnGroup.classList.remove("d-none");
+        btnGroup.classList.add("d-flex");
+      }
 
-        function closeMenu() {
-            let btnGroup = document.getElementById("btnGroup");
-            btnGroup.classList.add(`d-none`);
-        }
+      function closeMenu() {
+        let btnGroup = document.getElementById("btnGroup");
+        btnGroup.classList.add(`d-none`);
+      }
     </script>
-</body>
-
+  </body>
 </html>

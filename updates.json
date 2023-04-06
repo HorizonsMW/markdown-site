@@ -1,33 +1,35 @@
 {
-    "1": {
-        "date":"2023-03-27",
-        "title": "Test update 1",
-        "update": "Created updates"
-    },
-    "2": {
-        "date":"2023-03-27",
-        "title": "Test Update 2",
-        "update": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit."
-    },
-    "3":{
-        "date":"2023-03-28",
-        "title":"Hidden Diaries - part 1",
-        "update":"As promised, I am going to upload the first piece. I had been writing this piece while in campus, but you don't need all the dirt. Basically, the story behind this is that I lost a substancial amount of data from my hard drive, including some pieces I had written before. So, thats how this one was born. I walk around with the entire plot line up in my head, so I should probably finish it.",
-        "link":"#gem1"
-    },
-    "4":{
-        "date":"2023-03-29",
-        "title":"'Say something' options",
-        "update":"Hello, I have just added an option to email me from this website, check out the 'Say Something' section below. Tell me what you think about the website, what features you like and dislike, give comments and/or complains on features, and also report bugs to me directly. Thank You Humans."
-    },"5":{
-        "date":"2023-03-31",
-        "title":"Twitter embedded timeline",
-        "update":"I wanted to have my twitter profile's timeline on this homepage, for twitter updates, however the guy won't load when embedded in a markdown document. When I tested it on clean HTML, it worked fine. I have filled a feedback form and sent it to Twitter though. Meanwhile, I will see what I can do to make it work. For those interested on checking out twitter widgets and how they work, I'll live a link below for the publishing website. You can read more at <a href='https://developer.twitter.com/'>Twitter Developer Platform</a>",
-        "link":"https://publish.twitter.com/"
-    },"6":{
-        "date":"2023-04-05",
-        "title":"News is finally happening",
-        "update":"A'ight, finally. This has been the trickiest one to pull through yet. Its all JS from the fetching of the <md-span>`md`</md-span> files to the rendering. Just finished the bare minimum but maan thats hours of thinking to make it what it is now. I need bug reports and perfomance analysis so I'll really appreciate your feedback.  <md-span>`PS: Actual content is coming soon, keep the tab open.`</md-span>",
-        "link":"#news"
-    }
+  "1": {
+    "date": "2023-03-27",
+    "title": "Test update 1",
+    "update": "Created updates"
+  },
+  "2": {
+    "date": "2023-03-27",
+    "title": "Test Update 2",
+    "update": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit."
+  },
+  "3": {
+    "date": "2023-03-28",
+    "title": "Hidden Diaries - part 1",
+    "update": "As promised, I am going to upload the first piece. I had been writing this piece while in campus, but you don't need all the dirt. Basically, the story behind this is that I lost a substancial amount of data from my hard drive, including some pieces I had written before. So, thats how this one was born. I walk around with the entire plot line up in my head, so I should probably finish it.",
+    "link": "#gem1"
+  },
+  "4": {
+    "date": "2023-03-29",
+    "title": "'Say something' options",
+    "update": "Hello, I have just added an option to email me from this website, check out the 'Say Something' section below. Tell me what you think about the website, what features you like and dislike, give comments and/or complains on features, and also report bugs to me directly. Thank You Humans."
+  },
+  "5": {
+    "date": "2023-03-31",
+    "title": "Twitter embedded timeline",
+    "update": "I wanted to have my twitter profile's timeline on this homepage, for twitter updates, however the guy won't load when embedded in a markdown document. When I tested it on clean HTML, it worked fine. I have filled a feedback form and sent it to Twitter though. Meanwhile, I will see what I can do to make it work. For those interested on checking out twitter widgets and how they work, I'll live a link below for the publishing website. You can read more at <a href='https://developer.twitter.com/'>Twitter Developer Platform</a>",
+    "link": "https://publish.twitter.com/"
+  },
+  "6": {
+    "date": "2023-04-05",
+    "title": "News is finally happening",
+    "update": "A'ight, finally. This has been the trickiest one to pull through yet. Its all JS from the fetching of the <md-span>`md`</md-span> files to the rendering. Just finished the bare minimum but maan thats hours of thinking to make it what it is now. I need bug reports and perfomance analysis so I'll really appreciate your feedback.  <md-span>`PS: Actual content is coming soon, keep the tab open.`</md-span>",
+    "link": "#news"
+  }
 }
