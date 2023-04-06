@@ -23,10 +23,7 @@ function getContent(fragmentId, callback) {
     );
   } else if (fragmentId.charAt(0) === "n") {
     callback(
-      //`<md-block src="./docs/news/${fragmentId}.md" id="md-block-app"></md-block>`
-      
-        news()
-      
+      `<md-block src="./docs/news/${ news().files[0]}.md" id="md-block-app"></md-block>`
     );
   } else {
     callback(page);

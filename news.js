@@ -13,7 +13,7 @@ window.addEventListener("hashchange", () => {
 });*/
 
 function news() {
-  const folderPath = "./docs/news/";
+  const folderPath = "./docs/news/"; //`https://app.box.com/s/o0lhv3degp15wtno9p33mkvay6hos31f`;
   const folderPath2 =
     "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
 
@@ -42,6 +42,8 @@ function news() {
 
     var pathToNews = files[mostRecentNewsPost];
     getHTMLElements(pathToNews);
+    
+    return files;
   };
   xhr.send();
 }
