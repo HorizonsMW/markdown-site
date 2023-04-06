@@ -12,6 +12,13 @@ window.addEventListener("hashchange", () => {
   }
 });*/
 
+function getContent(file, callback) {
+  // lets do some custom content for each page of your website
+  var newsFile = `<md-block src="./docs/news/${file}.md" id="md-block-app"></md-block>`;
+  //console.log(page);
+  callback(newsFile);
+}
+
 function news() {
   const folderPath = "./docs/news/"; //`https://app.box.com/s/o0lhv3degp15wtno9p33mkvay6hos31f`;
   const folderPath2 =
@@ -42,10 +49,77 @@ function news() {
 
     var pathToNews = files[mostRecentNewsPost];
     getHTMLElements(pathToNews);
-    
+
     return files;
   };
   xhr.send();
+}
+function news2(){
+  //copied getHTMLElements()
+  const appDiv = document.getElementById("app");
+  // console.log(appDiv);
+  appDiv.replaceChildren();
+  //host container
+  const container = document.createElement("div");
+  container.classList.add("container", "p-2");
+  //host row
+  const row = document.createElement("div");
+  row.classList.add("row", "d-grid", "d-md-flex");
+
+  //links on the left
+  const links = document.createElement("div");
+  links.classList.add("col-md-3");
+  links.append("Links column");
+  //news in the middle
+  const newsContent = document.createElement("div");
+  newsContent.classList.add("col-md-6");
+  newsContent.setAttribute("id", "newsDiv");
+
+  //news navigation buttons
+  const newsNav = document.createElement("div");
+  newsNav.classList.add("row");
+
+  const newsNavCol = document.createElement("div");
+  newsNavCol.classList.add("col", "d-flex", "justify-content-between");
+
+  const nextContent = document.createElement("button");
+  nextContent.classList.add("rounded-circle", "p-2", "border-0");
+  img = document.createElement("img");
+  img.setAttribute("src", "./assets/img/icons/icons8-back-to-100.png");
+  img.setAttribute("width", "40px");
+  nextContent.appendChild(img);
+  const prevContent = document.createElement("button");
+  prevContent.classList.add("rounded-circle", "p-2", "border-0");
+  img2 = document.createElement("img");
+  img2.setAttribute("src", "./assets/img/icons/icons8-next-page-100.png");
+  img2.setAttribute("width", "40px");
+  prevContent.appendChild(img2);
+
+  nextContent.addEventListener("click", () => {
+    nextNews();
+  });
+  prevContent.addEventListener("click", () => {
+    prevNews();
+  });
+
+  newsNavCol.appendChild(nextContent);
+  newsNavCol.appendChild(prevContent);
+  newsNav.appendChild(newsNavCol);
+
+  newsContent.innerHTML = `<md-block src="./docs/news/${"news1"}.md" id="md-block-app"></md-block>`;
+
+  newsContent.appendChild(newsNav);
+
+  //ads on the right
+  const adsContent = document.createElement("div");
+  adsContent.classList.add("col-md-3");
+  adsContent.append("Ads column");
+
+  row.appendChild(links);
+  row.appendChild(newsContent);
+  row.appendChild(adsContent);
+  container.appendChild(row);
+  appDiv.appendChild(container);
 }
 
 function getHTMLElements(pathToFile) {
@@ -66,9 +140,14 @@ function getHTMLElements(pathToFile) {
   //news in the middle
   const newsContent = document.createElement("div");
   newsContent.classList.add("col-md-6");
-  const mdBlock = document.createElement("md-block");
+  newsContent.setAttribute("id", "newsDiv");
+
+  /*const mdBlock = document.createElement("md-block");
   mdBlock.setAttribute("src", pathToFile);
-  newsContent.appendChild(mdBlock);
+  newsContent.appendChild(mdBlock);*/ //test md-block like the other pages
+
+  newsContent.innerHTML = `<md-block src="./docs/news/${pathToFile}.md" id="md-block-app"></md-block>`;
+
   //news navigation buttons
   const newsNav = document.createElement("div");
   newsNav.classList.add("row");
