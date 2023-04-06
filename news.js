@@ -16,7 +16,7 @@ window.addEventListener("hashchange", () => {
 
 function news() {
   // 
-  const folderPath = "./docs/news/";
+  const folderPath = "/docs/news/";
   const folderPath2 = "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
 
   const files = [];
