@@ -22,10 +22,7 @@ function getContent(fragmentId, callback) {
       `<md-block src="./docs/gems/${fragmentId}.md" id="md-block-app"></md-block>`
     );
   } else if (fragmentId.charAt(0) === "n") {
-    /*callback(
-      `<md-block src="./docs/news/${fragmentId}.md" id="md-block-app"></md-block>`
-    );*/
-    news2()
+    news();
   } else {
     callback(page);
   }

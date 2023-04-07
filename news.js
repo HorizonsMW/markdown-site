@@ -1,229 +1,41 @@
 console.log("NEWS JS LOADED");
-
-/*if (location.hash === "#news") {
-  console.log("news section");
-  news();
-}
-
-window.addEventListener("hashchange", () => {
-  if (location.hash === "#news") {
-    console.log("news section");
-    news();
-  }
-});*/
-
-function getContent(file, callback) {
-  // lets do some custom content for each page of your website
-  var newsFile = `<md-block src="./docs/news/${file}.md" id="md-block-app"></md-block>`;
-  //console.log(page);
-  callback(newsFile);
-}
-
 function news() {
-  const folderPath = "./docs/news/"; //`https://app.box.com/s/o0lhv3degp15wtno9p33mkvay6hos31f`;
-  const folderPath2 =
-    "https://github.com/HorizonsMW/markdown-site/tree/main/docs/news/";
-
-  const files = [];
-  const xhr = new XMLHttpRequest();
-  xhr.open("GET", folderPath);
-
-  xhr.onload = function () {
-    const parser = new DOMParser();
-    const htmlDoc = parser.parseFromString(xhr.responseText, "text/html");
-    const links = htmlDoc.getElementsByTagName("a");
-    for (let i = 0; i < links.length; i++) {
-      if (links[i].href.endsWith(".md")) {
-        files.push(links[i].href);
-      }
-    }
-    //files in an array
-    console.log(files);
-    window.files = files;
-
-    console.log("File 1 " + files[0]);
-    console.log("Lenght is " + files.length);
-
-    var mostRecentNewsPost = files.length - 1;
-    window.itemPosition = mostRecentNewsPost;
-
-    var pathToNews = files[mostRecentNewsPost];
-    getHTMLElements(pathToNews);
-
-    return files;
-  };
-  xhr.send();
+  buildNewsUI();
 }
-function news2(){
-  //copied getHTMLElements()
+window.onload = function () {
+  const div = document.getElementById("newsDiv");
+  const ids = Array.from(div.querySelectorAll("[id]")).map((el) => el.id);
+  console.log(ids);
+};
+function buildNewsUI() {
   const appDiv = document.getElementById("app");
-  // console.log(appDiv);
   appDiv.replaceChildren();
-  //host container
-  const container = document.createElement("div");
-  container.classList.add("container", "p-2");
-  //host row
-  const row = document.createElement("div");
-  row.classList.add("row", "d-grid", "d-md-flex");
-
-  //links on the left
-  const links = document.createElement("div");
-  links.classList.add("col-md-3");
-  links.append("Links column");
-  //news in the middle
-  const newsContent = document.createElement("div");
-  newsContent.classList.add("col-md-6");
-  newsContent.setAttribute("id", "newsDiv");
-
-  //news navigation buttons
-  const newsNav = document.createElement("div");
-  newsNav.classList.add("row");
-
-  const newsNavCol = document.createElement("div");
-  newsNavCol.classList.add("col", "d-flex", "justify-content-between");
-
-  const nextContent = document.createElement("button");
-  nextContent.classList.add("rounded-circle", "p-2", "border-0");
-  img = document.createElement("img");
-  img.setAttribute("src", "./assets/img/icons/icons8-back-to-100.png");
-  img.setAttribute("width", "40px");
-  nextContent.appendChild(img);
-  const prevContent = document.createElement("button");
-  prevContent.classList.add("rounded-circle", "p-2", "border-0");
-  img2 = document.createElement("img");
-  img2.setAttribute("src", "./assets/img/icons/icons8-next-page-100.png");
-  img2.setAttribute("width", "40px");
-  prevContent.appendChild(img2);
-
-  nextContent.addEventListener("click", () => {
-    nextNews();
-  });
-  prevContent.addEventListener("click", () => {
-    prevNews();
-  });
-
-  newsNavCol.appendChild(nextContent);
-  newsNavCol.appendChild(prevContent);
-  newsNav.appendChild(newsNavCol);
-
-  newsContent.innerHTML = `<md-block src="./docs/news/${"news1"}.md" id="md-block-app"></md-block>`;
-
-  newsContent.appendChild(newsNav);
-
-  //ads on the right
-  const adsContent = document.createElement("div");
-  adsContent.classList.add("col-md-3");
-  adsContent.append("Ads column");
-
-  row.appendChild(links);
-  row.appendChild(newsContent);
-  row.appendChild(adsContent);
-  container.appendChild(row);
-  appDiv.appendChild(container);
+  var newsUI = `<div class="container">
+    <div class="row p-2 d-grid d-md-flex">
+      <div class="col-sm-3">
+        links
+      </div>
+      <div class="col-sm-6">
+        <div class="col" id="newsDiv">
+          <md-block src="./docs/news/news.md"></md-block>
+        </div>
+        <div class="col">
+        <div class="d-flex justify-content-between">
+          <button id="done" class="p-0 text-light rounded-circle m-1 border-0 " onclick="nextNews()"> <img src="./assets/img/icons/icons8-back-to-100.png" alt="previous-page" width="40px"></button>
+          <button id="done" class="p-0 rounded-circle text-light m-1 border-0 " onclick="prevNews()"> <img src="./assets/img/icons/icons8-next-page-100.png" alt="next-page" width="40px" ></button>
+        </div>
+        </div>
+      </div>
+      <div class="col-sm-3">
+        Ads
+      </div>
+    </div>
+  </div>`;
+  appDiv.innerHTML = newsUI;
 }
-
-function getHTMLElements(pathToFile) {
-  const appDiv = document.getElementById("app");
-  // console.log(appDiv);
-  appDiv.replaceChildren();
-  //host container
-  const container = document.createElement("div");
-  container.classList.add("container", "p-2");
-  //host row
-  const row = document.createElement("div");
-  row.classList.add("row", "d-grid", "d-md-flex");
-
-  //links on the left
-  const links = document.createElement("div");
-  links.classList.add("col-md-3");
-  links.append("Links column");
-  //news in the middle
-  const newsContent = document.createElement("div");
-  newsContent.classList.add("col-md-6");
-  newsContent.setAttribute("id", "newsDiv");
-
-  /*const mdBlock = document.createElement("md-block");
-  mdBlock.setAttribute("src", pathToFile);
-  newsContent.appendChild(mdBlock);*/ //test md-block like the other pages
-
-  newsContent.innerHTML = `<md-block src="./docs/news/${pathToFile}.md" id="md-block-app"></md-block>`;
-
-  //news navigation buttons
-  const newsNav = document.createElement("div");
-  newsNav.classList.add("row");
-
-  const newsNavCol = document.createElement("div");
-  newsNavCol.classList.add("col", "d-flex", "justify-content-between");
-
-  const nextContent = document.createElement("button");
-  nextContent.classList.add("rounded-circle", "p-2", "border-0");
-  img = document.createElement("img");
-  img.setAttribute("src", "./assets/img/icons/icons8-back-to-100.png");
-  img.setAttribute("width", "40px");
-  nextContent.appendChild(img);
-  const prevContent = document.createElement("button");
-  prevContent.classList.add("rounded-circle", "p-2", "border-0");
-  img2 = document.createElement("img");
-  img2.setAttribute("src", "./assets/img/icons/icons8-next-page-100.png");
-  img2.setAttribute("width", "40px");
-  prevContent.appendChild(img2);
-
-  nextContent.addEventListener("click", () => {
-    nextNews();
-  });
-  prevContent.addEventListener("click", () => {
-    prevNews();
-  });
-
-  newsNavCol.appendChild(nextContent);
-  newsNavCol.appendChild(prevContent);
-  newsNav.appendChild(newsNavCol);
-
-  newsContent.appendChild(newsNav);
-
-  //ads on the right
-  const adsContent = document.createElement("div");
-  adsContent.classList.add("col-md-3");
-  adsContent.append("Ads column");
-
-  row.appendChild(links);
-  row.appendChild(newsContent);
-  row.appendChild(adsContent);
-  container.appendChild(row);
-  appDiv.appendChild(container);
-}
-
 function nextNews() {
-  console.log("Next news");
-  this.itemPosition = itemPosition + 1;
-  //console.log(this.itemPosition);
-  //console.log(files);
-  latestItem = files.length - 1;
-
-  if (this.itemPosition >= latestItem) {
-    var pathToNews = files[latestItem];
-    getHTMLElements(pathToNews);
-    this.itemPosition = latestItem;
-  } else {
-    var pathToNews = files[this.itemPosition];
-    getHTMLElements(pathToNews);
-  }
+  console.log("nextNews");
 }
-
 function prevNews() {
-  console.log("Prev news");
-  this.itemPosition = itemPosition - 1;
-  //console.log(this.itemPosition);
-  //console.log(files);
-
-  if (this.itemPosition <= 0) {
-    var pathToNews = files[0];
-    console.log("path is " + pathToNews);
-    getHTMLElements(pathToNews);
-    this.itemPosition = 0;
-  } else {
-    var pathToNews = files[this.itemPosition];
-    console.log("path is " + pathToNews);
-    getHTMLElements(pathToNews);
-  }
+  console.log("prevNews");
 }
