@@ -21,7 +21,8 @@ function getContent(fragmentId, callback) {
     callback(
       `<md-block src="./docs/gems/${fragmentId}.md" id="md-block-app"></md-block>`
     );
-  } else if (fragmentId.charAt(0) === "n") {
+  } else if (fragmentId== "news") {
+    //callback(`<md-block src="./docs/news/${fragmentId}.md" id="md-block-app"></md-block>`);
     news();
   } else {
     callback(page);
@@ -35,8 +36,7 @@ function loadContent() {
   // This gets rid of the first character of the string
   fragmentId = location.hash.substr(1);
 
-  currentPage.innerHTML =
-    fragmentId.toString().charAt(0).toUpperCase() + fragmentId.substr(1);
+  currentPage.innerHTML =    fragmentId.toString().charAt(0).toUpperCase() + fragmentId.substr(1);
 
   // console.log(fragmentId);
 
@@ -53,7 +53,6 @@ loadContent();
 window.addEventListener("hashchange", function () {
   console.log("Location: " + location.hash);
   loadContent();
-
   if (this.location.hash == "#home") {
     fetch("updates.json")
       .then((response) => response.json())
@@ -62,6 +61,10 @@ window.addEventListener("hashchange", function () {
         lengthOfJson = Object.keys(data).length;
         showUpdates(lengthOfJson);
       });
+  }
+  if (this.location.hash == "#news") {
+    news();
+    getIDs();
   }
 });
 
@@ -310,6 +313,10 @@ window.onload = function () {
     });
   }else{
     console.log("Hey there");
+  }
+  if (this.location.hash == "#news") {
+    news();
+    getIDs();
   }
 
 };

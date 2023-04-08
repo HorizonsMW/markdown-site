@@ -1,16 +1,9 @@
 console.log("NEWS JS LOADED");
 function news() {
   buildNewsUI();
-
-  document.addEventListener("DOMContentLoaded", () => {
-    getIDs();
-  });
-  window.addEventListener("hashchange", () => {
-    if (this.location.hash == "#news") {
-      getIDs();
-    }
-  });
 }
+
+
 function getIDs() {
   const newsDiv = document.getElementById("newsDiv");
   getNews((content) => {
