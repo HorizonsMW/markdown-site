@@ -3,7 +3,6 @@ function news() {
   buildNewsUI();
 }
 
-
 function getIDs() {
   const newsDiv = document.getElementById("newsDiv");
   getNews((content) => {
@@ -12,8 +11,8 @@ function getIDs() {
   const linksDiv = document.getElementById("linksDiv");
 
   const mdApp = document.getElementById("md-block-app");
-  console.log(mdApp);
-  console.log(mdApp.children);
+  //console.log(mdApp);
+  //console.log(mdApp.children);
 
   const showhthis = `<md-span>[Text](#)</md-span>`;
   linksDiv.innerHTML = showhthis;
