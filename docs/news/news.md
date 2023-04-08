@@ -1,4 +1,4 @@
-## News 1
+## News 1: This is a Heading
 Ipsum sample text is a type of filler text that is commonly used in web design, typography, and publishing. It is usually composed of Latin words that have no meaning, but resemble natural language. The purpose of ipsum sample text is to provide a realistic representation of how the layout and typography of a document will look, without distracting the reader with actual content. Ipsum sample text can be generated using various tools and websites, such as Lorem Ipsum Generator, Blind Text Generator, or Dummy Text Generator.
 
 ## News 2 

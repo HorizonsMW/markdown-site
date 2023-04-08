@@ -1,23 +1,51 @@
 console.log("NEWS JS LOADED");
 function news() {
   buildNewsUI();
+
+  document.addEventListener("DOMContentLoaded", () => {
+    getIDs();
+  });
+  window.addEventListener("hashchange", () => {
+    if (this.location.hash == "#news") {
+      getIDs();
+    }
+  });
 }
-window.onload = function () {
-  const div = document.getElementById("newsDiv");
-  const ids = Array.from(div.querySelectorAll("[id]")).map((el) => el.id);
+function getIDs() {
+  const newsDiv = document.getElementById("newsDiv");
+  getNews((content) => {
+    newsDiv.innerHTML = content;
+  });
+  const linksDiv = document.getElementById("linksDiv");
+
+  const mdApp = document.getElementById("md-block-app");
+  console.log(mdApp);
+  console.log(mdApp.children);
+
+  const showhthis = `<md-span>[Text](#)</md-span>`;
+  linksDiv.innerHTML = showhthis;
+
+  const ids = Array.from(mdApp.querySelectorAll("[id]")).map((el) => el.id);
   console.log(ids);
-};
+  ids.forEach((element) => {
+    console.log(element);
+    const a = document.createElement("a");
+    a.setAttribute("href", "#");
+    linksDiv.append(a);
+  });
+
+  //////////////////////////////////////////////////////
+}
 function buildNewsUI() {
   const appDiv = document.getElementById("app");
   appDiv.replaceChildren();
   var newsUI = `<div class="container">
     <div class="row p-2 d-grid d-md-flex">
-      <div class="col-sm-3">
+      <div class="col-sm-3" id="linksDiv">
         links
       </div>
       <div class="col-sm-6">
         <div class="col" id="newsDiv">
-          <md-block src="./docs/news/news.md"></md-block>
         </div>
         <div class="col">
         <div class="d-flex justify-content-between">
@@ -38,4 +66,7 @@ function nextNews() {
 }
 function prevNews() {
   console.log("prevNews");
+}
+function getNews(callback) {
+  callback(`<md-block src="./docs/news/news.md" id="md-block-app"></md-block>`);
 }

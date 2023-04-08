@@ -300,13 +300,18 @@ function showUpdates(itemToShow) {
 window.onload = function () {
   //when the page loads
   //do this...
-  fetch("updates.json")
+  if (location.hash =="#home") {
+    fetch("updates.json")
     .then((response) => response.json())
     .then((data) => {
       //console.log(data);
       lengthOfJson = Object.keys(data).length;
       showUpdates(lengthOfJson); //show the latest update
     });
+  }else{
+    console.log("Hey there");
+  }
+
 };
 
 function nextUpdate() {
