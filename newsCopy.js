@@ -1,5 +1,5 @@
 console.log("NEWS COPY JS LOADED");
-
+console.log("Netlify config");
 function getFiles() {
   const xmlReq = new XMLHttpRequest();
   const path = "./docs/news/";
