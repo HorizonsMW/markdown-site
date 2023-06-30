@@ -1,6 +1,9 @@
 async function news() {
   buildNewsUI();
 
+  // Clear links first in the recent artircles section
+  clearOldLInksInRecentArtircles();
+
   try {
     // Fetch the news data and parse it as JSON
     const response = await fetch("news.json");
@@ -24,12 +27,13 @@ async function news() {
       let path = data[key].path;
       let author = data[key].author;
       let date = data[key].date;
+      let summary = data[key].summary;
 
       // Create the slug from the title using the slugify function
       let slug = slugify(title);
 
       // Assign the slug as a property name and the title, path, author and date as property valuee to the map object
-      slugPathMap[slug] = { title, path, author, date };
+      slugPathMap[slug] = { title, path, author, date, summary};
     }
 
     // Log the map object
@@ -38,14 +42,14 @@ async function news() {
     // Set the location hash and the news content
     // Get or set the initial location hash, use length value to set path to latest article by default
     if (window.location.hash == "#news") {
-      window.location.hash = `#news-${slugify(data[length].title)}`;
+      window.location.hash = `#news-${slugify(data[length].title)}`; //default to the most recent item
       locationStr = location.hash;
-      console.log(locationStr);
+      //console.log(locationStr);
     } else {
       window.location.hash =
         window.location.hash || `#news-${slugify(data[length].title)}`;
       locationStr = location.hash;
-      console.log(locationStr);
+      //console.log(locationStr);
     }
 
     // Get the slug part of the location string by removing the #news- prefix
@@ -69,40 +73,53 @@ async function news() {
     newsTitle.innerHTML = titleToUse;
     newsAuthor.innerHTML = authorToUse;
     newsDate.innerHTML = pathDateToUse;
+
+    // populate recent articles section - with 3 of the most recent items
+    var keys = Object.keys(slugPathMap);
+    for (var i = keys.length; i >= keys.length - 3; i--) {
+      console.log(i); // print the current value of i
+      // console.log(keys[i]);
+      if (keys[i] == undefined) {
+        // hide undefined links, by doing literally doing nothing, Ha! :)
+        // var link = '';
+      } else {
+        var link = `#news-${keys[i]}`;
+        // console.log(link);
+
+        var linkBody = `
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="heading-${keys[i]}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${keys[i]}" aria-expanded="false" aria-controls="collapse-${keys[i]}">
+              ${slugPathMap[keys[i]].title}
+            </button>
+          </h2>
+          <div id="collapse-${keys[i]}" class="accordion-collapse collapse" aria-labelledby="heading-${keys[i]}" data-bs-parent="#accordionArticleLinks">
+            <div class="accordion-body">
+              <p>${slugPathMap[keys[i]].summary}</p>
+              <a href="${link}">Read More</a>              
+            </div>
+          </div>
+        </div>
+        `;
+
+       // console.log(linkBody);
+        var accordionArticleLinksDiv = document.getElementById("accordionArticleLinks");
+        accordionArticleLinksDiv.innerHTML += linkBody;
+      }
+    }
   } catch (error) {
     // Handle any errors that may occur
     console.error(error);
-    newsDiv.innerHTML = error;
+    newsDiv.innerHTML += error;
   }
 }
 
 function buildNewsUI() {
   let appDiv = document.getElementById("app");
   appDiv.replaceChildren();
-  let newsUI = `<div class="container">
-    <div class="row p-2 d-grid d-md-flex">
-      <div class="col-sm-3" id="linksDiv">
-        links
-      </div>
-      <div class="col-sm-6">
-      <div class="col" id="newsHeader">
-      <div id="newsTitle" class="pt-3 h2">Title</div>
-      <div class="col d-flex">
-        <div id="newsAuthor" class="p-3" >Author</div>
-        <div id="newsDate" class="p-3" >Date</div>
-      </div>
-      
-      </div>
-      <div class="col" id="newsDiv">
-        </div>
-        <div class="col" id="recentArticles">
-          Recent Articles
-        </div>
-      </div>
-      <div class="col-sm-3">
-        Ads
-      </div>
-    </div>
+  let newsUI = `<div class="container"><div class="row p-2 d-grid d-md-flex"><div class="col-sm-3" id="linksDiv">links</div><div class="col-sm-6"><div class="col" id="newsHeader"><div id="newsTitle" class="pt-3 h2">Title</div><div class="col d-flex"><div id="newsAuthor" class="p-3" >Author</div><div id="newsDate" class="p-3" >Date</div> </div></div> <div class="col" id="newsDiv"> </div><div class="col" id="recentArticles"><h3>Recent Articles</h3> <div class="accordion" id="accordionArticleLinks"><div></div></div></div></div>
+  <div class="col-sm-3">
+    Ads
   </div>`;
   appDiv.innerHTML = newsUI;
 }
@@ -115,6 +132,17 @@ function slugify(text) {
   text = text.replace(/^-+|-+$/g, "");
   // Return the slug
   return text;
+}
+
+function clearOldLInksInRecentArtircles() {
+  // Clear recent links first in the recent artircles section
+  // get list with links
+  var listOfLinks = document.getElementById("accordionArticleLinks");
+  var oldLinks = listOfLinks.getElementsByClassName("accordion-item"); // get a tags under recentArticlesLinks ul
+  // console.log(oldLinks); //html collection object
+  while (oldLinks.length > 0) {
+    oldLinks[0].remove(); //remove old links
+  }
 }
 
 console.log(`NEWS JS LOADED`);

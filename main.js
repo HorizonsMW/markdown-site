@@ -68,7 +68,7 @@ window.addEventListener("hashchange", function () {
       });
   }
   if (this.location.hash.charAt(1) == "n") {
-    news();
+    // news(); // commented because news() was being executed twice on hashchange
   }
 });
 
