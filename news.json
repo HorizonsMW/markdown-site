@@ -1,0 +1,14 @@
+{
+    "1": {
+        "date": "2023-06-29",
+        "title": "Test News 1 Using JSON",
+        "author":"Brian Mulwa",
+        "path":"./docs/news/news.md"
+      },
+      "2": {
+        "date": "2023-06-29",
+        "title": "Test News 2 Using JSON",
+        "author":"Brian Mulwa",
+        "path":"./docs/news/news2.md"
+      }
+}

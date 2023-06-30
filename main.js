@@ -21,7 +21,7 @@ function getContent(fragmentId, callback) {
     callback(
       `<md-block src="./docs/gems/${fragmentId}.md" id="md-block-app"></md-block>`
     );
-  } else if (fragmentId== "news") {
+  } else if (fragmentId.charAt(0) === "n") {
     //callback(`<md-block src="./docs/news/${fragmentId}.md" id="md-block-app"></md-block>`);
     news();
   } else {
@@ -36,7 +36,12 @@ function loadContent() {
   // This gets rid of the first character of the string
   fragmentId = location.hash.substr(1);
 
-  currentPage.innerHTML =    fragmentId.toString().charAt(0).toUpperCase() + fragmentId.substr(1);
+  if (fragmentId.charAt(0)==="n") {
+    currentPage.innerHTML ="News";
+  } else {
+    currentPage.innerHTML =
+    fragmentId.toString().charAt(0).toUpperCase() + fragmentId.substr(1);
+  }
 
   // console.log(fragmentId);
 
@@ -62,9 +67,8 @@ window.addEventListener("hashchange", function () {
         showUpdates(lengthOfJson);
       });
   }
-  if (this.location.hash == "#news") {
+  if (this.location.hash.charAt(1) == "n") {
     news();
-    getIDs();
   }
 });
 
@@ -303,22 +307,20 @@ function showUpdates(itemToShow) {
 window.onload = function () {
   //when the page loads
   //do this...
-  if (location.hash =="#home") {
+  if (location.hash == "#home") {
     fetch("updates.json")
-    .then((response) => response.json())
-    .then((data) => {
-      //console.log(data);
-      lengthOfJson = Object.keys(data).length;
-      showUpdates(lengthOfJson); //show the latest update
-    });
-  }else{
-    console.log("Hey there");
+      .then((response) => response.json())
+      .then((data) => {
+        //console.log(data);
+        lengthOfJson = Object.keys(data).length;
+        showUpdates(lengthOfJson); //show the latest update
+      });
+  } else {
+    console.log("Hey there, not home.");
   }
-  if (this.location.hash == "#news") {
+  if (this.location.hash.charAt(1) == "n") {
     news();
-    getIDs();
   }
-
 };
 
 function nextUpdate() {
