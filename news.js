@@ -27,7 +27,7 @@ async function news() {
         // console.log(link);
         var linkBody = `
             <div class="accordion-item  bg-transparent mb-2" style="border: 1px solid rgba(0, 0, 0, 0.568);border-radius:26px;">
-              <h2 class="accordion-header rounded-pill" id="heading-${title}">
+              <h2 class="accordion-header" id="heading-${title}">
                 <button class="accordion-button bg-light bg-opacity-75" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
                   ${title}
                 </button>
