@@ -1,9 +1,8 @@
 async function news() {
   buildNewsUI();
-
+  console.log("UI Complete");
   // Clear links first in the recent artircles section
   clearOldLInksInRecentArtircles();
-
   try {
     // Fetch the news data and parse it as JSON
     const response = await fetch("news.json");
@@ -11,6 +10,44 @@ async function news() {
 
     // Get the length and keys of the data object
     const length = Object.keys(data).length;
+
+    //compute recents first to avoid totally blank page when an error occurs
+    // populate recent articles section - with 3 of the most recent items
+    for (var i = length; i > length - 3; i--) {
+      // console.log(i); // print the current value of i
+      // console.log(data[i]);
+      if (data[i] == undefined) {
+        // hide undefined links, by doing literally nothing, Ha! :)
+        // var link = '';
+      } else {
+        let title = data[i].title;
+        let slugTitle = slugify(title);
+
+        var link = `#news-${slugTitle}`;
+        // console.log(link);
+        var linkBody = `
+            <div class="accordion-item  bg-transparent mb-2" style="border: 1px solid rgba(0, 0, 0, 0.568);border-radius:26px;">
+              <h2 class="accordion-header rounded-pill" id="heading-${title}">
+                <button class="accordion-button bg-light bg-opacity-75" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
+                  ${title}
+                </button>
+              </h2>
+              <div id="collapse-${slugTitle}" class="accordion-collapse collapse" aria-labelledby="heading-${title}" data-bs-parent="#accordionArticleLinks">
+                <div class="accordion-body">
+                  <p>${data[i].summary}</p>
+                  <a href="${link}">Read More</a>              
+                </div>
+              </div>
+            </div>
+            `;
+
+        // console.log(linkBody);
+        var accordionArticleLinksDiv = document.getElementById(
+          "accordionArticleLinks"
+        );
+        accordionArticleLinksDiv.innerHTML += linkBody;
+      }
+    }
 
     // Create an empty object to store the slug-path mapping - the mapping will help in:
     // fetching the relevant article, and the article attributes based on the URL passed,
@@ -33,7 +70,7 @@ async function news() {
       let slug = slugify(title);
 
       // Assign the slug as a property name and the title, path, author and date as property valuee to the map object
-      slugPathMap[slug] = { title, path, author, date, summary};
+      slugPathMap[slug] = { title, path, author, date, summary };
     }
 
     // Log the map object
@@ -61,6 +98,39 @@ async function news() {
     let pathDateToUse = slugPathMap[slug].date;
     let authorToUse = slugPathMap[slug].author;
 
+    //Format the date to eg: July 2023
+    // Create a new Date object from the string
+    var date = new Date(pathDateToUse);
+
+    // Get the month as a number
+    var month = date.getMonth();
+
+    // Map the number to the month name
+    var months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    var monthName = months[month];
+
+    // Get the year as a four-digit number
+    var year = date.getFullYear();
+
+    // Concatenate the month name and the year
+    var formattedDate = monthName + " " + year;
+
+    // Display the result
+    // console.log(formattedDate); // July 2023
+
     // Update the news content using the path
     // newsDiv.innerHTML = `<md-block src="${pathToUse}"></md-block>`;
     // Use ternary operator to render a loading message or the news content
@@ -70,57 +140,58 @@ async function news() {
     // Use logical operator to render an error message if there is an error
     // newsDiv.innerHTML += error ? `<p>Error: ${error.message}</p>` : ""; // says error is undefined
 
+    // append author profile image
+    var img = document.createElement("img");
+    img.setAttribute("src", "./assets/img/profile_image_small.jpg");
+    newsAuthorImg.innerHTML = "";
+    img.setAttribute("class", "rounded-circle m-1");
+    img.setAttribute("height", "35px");
+    newsAuthorImg.appendChild(img);
+
     newsTitle.innerHTML = titleToUse;
-    newsAuthor.innerHTML = authorToUse;
-    newsDate.innerHTML = pathDateToUse;
-
-    // populate recent articles section - with 3 of the most recent items
-    var keys = Object.keys(slugPathMap);
-    for (var i = keys.length; i >= keys.length - 3; i--) {
-      console.log(i); // print the current value of i
-      // console.log(keys[i]);
-      if (keys[i] == undefined) {
-        // hide undefined links, by doing literally doing nothing, Ha! :)
-        // var link = '';
-      } else {
-        var link = `#news-${keys[i]}`;
-        // console.log(link);
-
-        var linkBody = `
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="heading-${keys[i]}">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${keys[i]}" aria-expanded="false" aria-controls="collapse-${keys[i]}">
-              ${slugPathMap[keys[i]].title}
-            </button>
-          </h2>
-          <div id="collapse-${keys[i]}" class="accordion-collapse collapse" aria-labelledby="heading-${keys[i]}" data-bs-parent="#accordionArticleLinks">
-            <div class="accordion-body">
-              <p>${slugPathMap[keys[i]].summary}</p>
-              <a href="${link}">Read More</a>              
-            </div>
-          </div>
-        </div>
-        `;
-
-       // console.log(linkBody);
-        var accordionArticleLinksDiv = document.getElementById("accordionArticleLinks");
-        accordionArticleLinksDiv.innerHTML += linkBody;
-      }
-    }
+    newsTitle.innerHTML += " - " + formattedDate;
+    newsAuthor.innerHTML += authorToUse.toUpperCase();
+    newsDate.innerHTML = "("+pathDateToUse+")";
   } catch (error) {
     // Handle any errors that may occur
     console.error(error);
+    var errorResponse = `The news item you are looking for does not exist, yet. Apologies for the incovenience.`;
+    newsDiv.innerHTML += errorResponse;
+    newsDiv.innerHTML += "<br>";
+    newsDiv.innerHTML += "<br>";
     newsDiv.innerHTML += error;
+    newsDiv.innerHTML += "<br>";
+    newsDiv.innerHTML += "<br>";
   }
 }
 
 function buildNewsUI() {
   let appDiv = document.getElementById("app");
   appDiv.replaceChildren();
-  let newsUI = `<div class="container"><div class="row p-2 d-grid d-md-flex"><div class="col-sm-3" id="linksDiv">links</div><div class="col-sm-6"><div class="col" id="newsHeader"><div id="newsTitle" class="pt-3 h2">Title</div><div class="col d-flex"><div id="newsAuthor" class="p-3" >Author</div><div id="newsDate" class="p-3" >Date</div> </div></div> <div class="col" id="newsDiv"> </div><div class="col" id="recentArticles"><h3>Recent Articles</h3> <div class="accordion" id="accordionArticleLinks"><div></div></div></div></div>
-  <div class="col-sm-3">
-    Ads
-  </div>`;
+  let newsUI = `<div class="container">
+      <div class="row p-2 d-grid d-lg-flex">
+        <div class="col-lg-3" id="linksDiv"></div>
+        <div class="col-lg-6">
+          <div class="col" id="newsHeader">
+            <div id="newsTitle" class="pt-3 h2">Title</div>
+            <div class="col d-flex align-items-center">
+              <div id="newsAuthorImg">newsAuthorImg</div>
+              <span id="newsAuthor" class="m-2"></span><span id="newsDate">Date</span>
+            </div>
+          </div>
+          <div class="col" id="newsDiv"></div>
+          <div class="col pt-4 p-2 bg-light bg-opacity-75" id="recentArticles" style="border: 0px solid rgba(0, 0, 0, 0.568);border-radius:26px;">
+            <h3>Recent Articles</h3>
+            <div class="accordion" id="accordionArticleLinks">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3">
+          
+        </div>
+      </div>
+      </div>`;
   appDiv.innerHTML = newsUI;
 }
 function slugify(text) {

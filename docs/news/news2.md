@@ -1,2 +1,2 @@
-## Tiktok, all you need to know - I suppose.
+## What is Ipsum?
 We all use it, but what is it really. This is what Bing told me (while on its GPT4 steroid PED pill). Ipsum sample text is a type of filler text that is commonly used in web design, typography, and publishing. It is usually composed of Latin words that have no meaning, but resemble natural language. The purpose of ipsum sample text is to provide a realistic representation of how the layout and typography of a document will look, without distracting the reader with actual content. Ipsum sample text can be generated using various tools and websites, such as Lorem Ipsum Generator, Blind Text Generator, or Dummy Text Generator.

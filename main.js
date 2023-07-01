@@ -67,9 +67,6 @@ window.addEventListener("hashchange", function () {
         showUpdates(lengthOfJson);
       });
   }
-  if (this.location.hash.charAt(1) == "n") {
-    // news(); // commented because news() was being executed twice on hashchange
-  }
 });
 
 function sendMessage() {
@@ -318,9 +315,7 @@ window.onload = function () {
   } else {
     console.log("Hey there, not home.");
   }
-  if (this.location.hash.charAt(1) == "n") {
-    news();
-  }
+
 };
 
 function nextUpdate() {

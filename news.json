@@ -12,5 +12,19 @@
     "author": "Brian Mulwa",
     "path": "./docs/news/news2.md",
     "summary": "This is a summary"
+  },
+  "3": {
+    "date": "2023-07-01",
+    "title": "How to Find the Perfect Phone for You in 2023: A Personalized Guide",
+    "author": "Brian Mulwa",
+    "path": "./docs/news/phone2023.md",
+    "summary": "More often than not, I get questions about getting a new phone. Some are pretty basic like what brand does what, while others borderline extensive research. In this guide, I'm just going ramble on and on about phones and what you need to consider hoping that it helps someone."
+  },
+  "4": {
+    "date": "2023-07-01",
+    "title": "News: The Ins and Outs.",
+    "author": "Brian Mulwa",
+    "path": "./docs/news/news-the-ins-and-outs.md",
+    "summary": "A deep dive on how the news UI is built and how the different articles are fetched and rendered."
   }
 }

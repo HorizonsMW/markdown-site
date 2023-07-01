@@ -31,5 +31,11 @@
     "title": "News is finally happening",
     "update": "A'ight, finally. This has been the trickiest one to pull through yet. Its all JS from the fetching of the <md-span>`md`</md-span> files to the rendering. Just finished the bare minimum but maan thats hours of thinking to make it what it is now. I need bug reports and perfomance analysis so I'll really appreciate your feedback.  <md-span>`PS: Actual content is coming soon, keep the tab open.`</md-span>",
     "link": "#news"
+  },
+  "7": {
+    "date": "2023-07-01",
+    "title": "News is finally happening - 3 months later, comical.",
+    "update": "Ok, so I mentioned that news was becoming tricky to finesse, at least for me. Anyway, forget about all those 'md-span' stuff. I needed news to be dynamic - the content to change based on date by default, or based on the URL. Essentially, this is how a news site works, but with my rather simple model of rendering markdown based on hashchange, news would have had a single static page - and it does, but in a very quirky way. I coded a couple of models including some ExpressJS apps, till my battery ran out, and all of them conflicted with my main goal - simplicty. I'll post an update on how I managed to get news up and running while maintaining the overall simplicy.",
+    "link": "#news"
   }
 }
