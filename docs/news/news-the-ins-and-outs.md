@@ -126,7 +126,12 @@ async function news() {
   // Clear links first in the recent artircles section
   clearOldLInksInRecentArtircles();
   try {
-
+    /**
+     * What do we do first? Well, we need data, don't we? 
+     * To simplify the process, a json file holds;
+     * the Title, Author, Date, and most importantly, 
+     * the file path to an article.
+    */
   }catch (error) {
     // Handle any errors that may occur
     console.error(error);

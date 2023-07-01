@@ -1,6 +1,16 @@
 async function news() {
   buildNewsUI();
   console.log("UI Complete");
+
+  //Loading Status
+  var listOfLinks_loading = document.getElementById("accordionArticleLinks");
+  listOfLinks_loading.innerHTML = `<h3>Loading...</h3>`;
+  newsDiv.innerHTML = ``;
+  newsAuthorImg.innerHTML= '';
+  newsTitle.innerHTML = '<h2>Fetching...</h2>';
+  newsAuthor.innerHTML = '';
+  newsDate.innerHTML = '';
+
   // Clear links first in the recent artircles section
   clearOldLInksInRecentArtircles();
   try {
@@ -151,7 +161,7 @@ async function news() {
     newsTitle.innerHTML = titleToUse;
     newsTitle.innerHTML += " - " + formattedDate;
     newsAuthor.innerHTML += authorToUse.toUpperCase();
-    newsDate.innerHTML = "("+pathDateToUse+")";
+    newsDate.innerHTML = "(" + pathDateToUse + ")";
   } catch (error) {
     // Handle any errors that may occur
     console.error(error);
