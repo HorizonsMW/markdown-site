@@ -169,9 +169,8 @@ function buildNewsUI() {
   let appDiv = document.getElementById("app");
   appDiv.replaceChildren();
   let newsUI = `<div class="container">
-      <div class="row p-2 d-grid d-lg-flex">
-        <div class="col-lg-3" id="linksDiv"></div>
-        <div class="col-lg-6">
+      <div class="row d-grid d-lg-flex">
+        <div class="col">
           <div class="col" id="newsHeader">
             <div id="newsTitle" class="pt-3 h2">Title</div>
             <div class="col d-flex align-items-center">
@@ -186,9 +185,6 @@ function buildNewsUI() {
               
             </div>
           </div>
-        </div>
-        <div class="col-lg-3">
-          
         </div>
       </div>
       </div>`;
