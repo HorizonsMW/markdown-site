@@ -80,7 +80,8 @@ Here is `getContent()` doing his own magic:
 ```javascript
 function getContent(fragmentId, callback) {
   // lets do some custom content for each page
-  var page = `<md-block src="./docs/pages/${fragmentId}.md" id="md-block-app"></md-block>`;
+  var page = `<md-block src="./docs/pages/${fragmentId}.md" id="md-block-app">
+  </md-block>`;
   /**
    * remember fragmentId, this guy is just a word,
    * corresponding to the name of a .md file
@@ -127,14 +128,93 @@ async function news() {
   clearOldLInksInRecentArtircles();
   try {
     /**
-     * What do we do first? Well, we need data, don't we? 
+     * What do we do first? Well, we need data, don't we?
      * To simplify the process, a json file holds;
-     * the Title, Author, Date, and most importantly, 
+     * the Title, Author, Date, and most importantly,
      * the file path to an article.
+     * I use the Fetch API to get my JSON file.
     */
+    // Fetch the news data and parse it as JSON
+    const response = await fetch("news.json");
+    const data = await response.json();
+    /**
+     * When I get this data, the first thing computed is the
+     * recent articles section using a countdown for loop.
+    */
+    // Get the length of the data object
+    const length = Object.keys(data).length;
+    for (var i = length; i > length - 3; i--) {
+    // ...compute three of the most recent articles
+    }
+
+    /**
+     * This gives way to the final step of the process
+     * Each article will need to have a link associated with it
+     * the link will be a slug text string derived from the title
+     * each link will map to its own path,
+     * hence the ability to have as many articles under news as possible
+     * I Create an empty object to store the slug-path mapping
+     * the mapping will help in:
+     * fetching the relevant article,
+     * and the fetching article attributes based on the URL passed,
+     * This is necessary to allow:
+     *  navigating to specific article easy,
+     * especially when sharing article link
+    */
+
+    let slugPathMap = {};
+    // Loop through the data object and create the slug-path pairs
+    for (let key in data) {
+      // Get the title, path, author and date from the current item
+      let title = data[key].title;
+      let path = data[key].path;
+      let author = data[key].author;
+      let date = data[key].date;
+      let summary = data[key].summary;
+
+      // Create the slug from the title using the slugify function
+      let slug = slugify(title);
+
+      // Assign the slug as a property name and,
+      // the title, path, author and date as property values to the map object
+      slugPathMap[slug] = { title, path, author, date, summary };
+    }
+
+    /**
+     * With slug-path map containing info for each link (slug)
+     * I simply use the map to send an article based on the URL
+     * slug = URL minus the '#news-' characters
+    */
+
+    // Get the slug part of the location string by removing the #news- prefix
+    let slug = locationStr.replace("#news-", "");
+    // Get the attributes of the article based on the slug from the map object
+    let pathToUse = slugPathMap[slug].path;
+    let titleToUse = slugPathMap[slug].title;
+    let pathDateToUse = slugPathMap[slug].date;
+    let authorToUse = slugPathMap[slug].author;
+
+    //then
+
+    // Update the news content using the path
+    // Use ternary operator to render a loading message or the news content
+    newsDiv.innerHTML = data
+      ? `<md-block src="${pathToUse}"></md-block>`
+      : `<p>Loading...</p>`;
+
+    /**
+     * Voila! That is it. The rest of the attributes are essentially
+     * computed the same way as the newsDiv content.
+    */
+
   }catch (error) {
     // Handle any errors that may occur
     console.error(error);
   }
 }
 ```
+##### I hope you find this article illuminating. Feel free to check out the code on GitHub, link in [About](#about) page. I would appreciate some questions.
+
+TAKE CARE : )
+
+<br>

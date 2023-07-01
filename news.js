@@ -18,7 +18,7 @@ async function news() {
     const response = await fetch("news.json");
     const data = await response.json();
 
-    // Get the length and keys of the data object
+    // Get the length of the data object
     const length = Object.keys(data).length;
 
     //compute recents first to avoid totally blank page when an error occurs
@@ -37,8 +37,8 @@ async function news() {
         // console.log(link);
         var linkBody = `
             <div class="accordion-item  bg-transparent mb-2" style="border: 1px solid rgba(0, 0, 0, 0.568);border-radius:26px;">
-              <h2 class="accordion-header" id="heading-${title}">
-                <button class="accordion-button bg-light bg-opacity-75" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
+              <h2 class="accordion-header" id="heading-${title}" style="border-bottom: 1px solid rgba(0, 0, 0, 0.568);">
+                <button class="accordion-button bg-light bg-opacity-75 " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
                   ${title}
                 </button>
               </h2>
@@ -79,7 +79,7 @@ async function news() {
       // Create the slug from the title using the slugify function
       let slug = slugify(title);
 
-      // Assign the slug as a property name and the title, path, author and date as property valuee to the map object
+      // Assign the slug as a property name and the title, path, author and date as property values to the map object
       slugPathMap[slug] = { title, path, author, date, summary };
     }
 
@@ -215,6 +215,7 @@ function clearOldLInksInRecentArtircles() {
   // Clear recent links first in the recent artircles section
   // get list with links
   var listOfLinks = document.getElementById("accordionArticleLinks");
+  listOfLinks.innerHTML="";
   var oldLinks = listOfLinks.getElementsByClassName("accordion-item"); // get a tags under recentArticlesLinks ul
   // console.log(oldLinks); //html collection object
   while (oldLinks.length > 0) {
