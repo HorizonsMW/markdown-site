@@ -178,8 +178,7 @@ async function news() {
 function buildNewsUI() {
   let appDiv = document.getElementById("app");
   appDiv.replaceChildren();
-  let newsUI = `<div class="container">
-      <div class="row d-grid d-lg-flex">
+  let newsUI = `<div class="row d-grid d-lg-flex">
         <div class="col">
           <div class="col" id="newsHeader">
             <div id="newsTitle" class="pt-3 h2">Title</div>
@@ -189,14 +188,13 @@ function buildNewsUI() {
             </div>
           </div>
           <div class="col" id="newsDiv"></div>
-          <div class="col pt-4 p-2 bg-light bg-opacity-75" id="recentArticles" style="border: 0px solid rgba(0, 0, 0, 0.568);border-radius:26px;">
+          <div class="col pt-4 p-2 bg-light bg-opacity-75 mb-3" id="recentArticles" style="border: 0px solid rgba(0, 0, 0, 0.568);border-radius:15px;">
             <h3>Recent Articles</h3>
             <div class="accordion" id="accordionArticleLinks">
               
             </div>
           </div>
         </div>
-      </div>
       </div>`;
   appDiv.innerHTML = newsUI;
 }
