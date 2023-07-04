@@ -48,7 +48,7 @@ with you on your next project.
 
 <div class="d-grid m-2">
     <div class="col d-flex justify-content-center m-0 p-2 input">
-     <input class="rounded-pill p-2" type="text" id="name" name="name" required minlength="4" maxlength="20" size="10" placeholder="Your name">
+     <input class="rounded-3 p-2" type="text" id="name" name="name" required minlength="4" maxlength="20" size="10" placeholder="Your name">
     </div>
     <div class="col d-flex justify-content-center m-0 p-2 input">
       <textarea class="rounded-3 p-2" type="text" id="message" name="message" required minlength="10" size="12" placeholder="Your message"></textarea>
