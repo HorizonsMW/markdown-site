@@ -36,9 +36,9 @@ async function news() {
         var link = `#news-${slugTitle}`;
         // console.log(link);
         var linkBody = `
-            <div class="accordion-item  bg-transparent mb-2" style="border: 1px solid rgba(0, 0, 0, 0.568);border-radius:26px;">
-              <h2 class="accordion-header" id="heading-${title}" style="border-bottom: 1px solid rgba(0, 0, 0, 0.568);">
-                <button class="accordion-button bg-light bg-opacity-75 " type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
+            <div class="accordion-item mb-2" style="border: 2px solid #ff480055;border-radius:26px; background: #fceed1cf;">
+              <h2 class="accordion-header" id="heading-${title}">
+                <button class="accordion-button bg-opacity-75 " style="color:#140e03f2; background:#ff480055;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
                   ${title}
                 </button>
               </h2>
@@ -188,7 +188,7 @@ function buildNewsUI() {
             </div>
           </div>
           <div class="col" id="newsDiv"></div>
-          <div class="col pt-4 p-2 bg-light bg-opacity-75 mb-3" id="recentArticles" style="border: 0px solid rgba(0, 0, 0, 0.568);border-radius:15px;">
+          <div class="col pt-4 p-2 mb-3" id="recentArticles" style="border: 0px solid rgba(0, 0, 0, 0.568);border-radius:15px;">
             <h3>Recent Articles</h3>
             <div class="accordion" id="accordionArticleLinks">
               
