@@ -180,3 +180,10 @@ pre{
   padding: 10px;
   border-radius: 10px;
 }
+#newsDiv .news_images{
+  text-align: center;
+}
+#newsDiv img{
+  max-width: 100%; 
+  vertical-align: middle; 
+}

@@ -20,7 +20,8 @@ This website revolves around a single HTML file - essentially this is a single-p
 ```js
 /**Original Code*/
 function getContent(fragmentId, callback){
-    /**This function fetches and returns data based on the hash location, e.g, #home, which is passed to the fuction
+    /**This function fetches and returns data based on the hash location,
+     * e.g, #home, which is passed to the fuction
      *  via the fragmentId parameter
     */
   var pages = {
@@ -30,8 +31,10 @@ function getContent(fragmentId, callback){
   };
 
   callback(pages[fragmentId]); 
-  /**The limitation of this function as it is is that, for new pages that are not included in the pages object,
-   * I would have to come back and add the entry. Now doing this would have been exhausting for the next couple of 
+  /**The limitation of this function as it is is that, 
+   * for new pages that are not included in the pages object,
+   * I would have to come back and add the entry. 
+   * Now doing this would have been exhausting for the next couple of 
    * pages so I opted to switch it up a little bit.
   */
 }
@@ -42,9 +45,13 @@ function getContent(fragmentId, callback){
 function getContent(fragmentId, callback) {
     // lets do some custom content for each page of your website
     var page = `<md-block src="./docs/pages/${fragmentId}.md" id="md-block-app"></md-block>`;
-    /**The line above fetches and returns a markdown document based on the location provided by the fragmentId parameter.
-     * The catch is that the location and the document to preview must have the same name. To counter this,
-     * for the about page which renders the README.md document, I used an if fuction to redirect to the file - README.md.
+    /**The line above fetches and returns a markdown document 
+     * based on the location provided by the fragmentId parameter.
+     * The catch is that:
+     *  the location and the document to preview must have the same name. 
+     * To counter this,
+     * for the about page which renders the README.md document, 
+     * I used an if fuction to redirect to the file - README.md.
     */
    // console.log(page); //For informational purposes during development
     if (fragmentId === "about") {
@@ -60,7 +67,7 @@ function getContent(fragmentId, callback) {
 There is a lot more tinkering that has happened to build this site. Oh! Before I forget, Markdown + HTML is an heavenly combination. For clarity, using HTML tags in Markdown documents is a very recommendable way to overcome the limitations of Markdown. For example, the [contact](#contact) page is an intricate blend of the two technologies to bring out the best of both. 
 
 ### The background
-Having a single background was not on the menu to start with. A background plays a key role in defining a website. Simply put, having one permanent background - in my own opinion - may be a disadvanage to enticing visitors. I think that, to stand out, you need a unique flair -one that excites and keeps the audience subtly entertained. I needed to have that dynamic exprience on my website. A lot of "sotwares" offer dynamic wallpapers, you have Samsung with their "Wallpaper Services" feature on OneUI, you have Samsung Global Goals wallpaper feature, there's Microsoft Edge with the New Tab Background, there's also Bing Wallpaper of the day, Windows 10 Lockscreen and so on. Bing Wallpaper! Phenomenal! Of all the dynamic wallpaper services that I have used, Bing Wallpapers stood out to me because of its excellent picks from the nature shelf nature and ease of use. Bing presents you with an image of the day with more information regarding the image and how to get it - that simple.
+Having a single background was not on the menu to start with. A background plays a key role in defining a website. Simply put, having one permanent background - in my own opinion - may be a disadvanage to enticing visitors. I think that, to stand out, you need a unique flair - one that excites and keeps the audience subtly entertained. I needed to have that dynamic exprience on my website. A lot of "sotwares" offer dynamic wallpapers, you have Samsung with their "Wallpaper Services" feature on OneUI, you have Samsung Global Goals wallpaper feature, there's Microsoft Edge with the New Tab Background, there's also Bing Wallpaper of the day, Windows 10 Lockscreen and so on. Bing Wallpaper! Phenomenal! Of all the dynamic wallpaper services that I have used, Bing Wallpapers stood out to me because of its excellent picks from the nature shelf nature and ease of use. Bing presents you with an image of the day with more information regarding the image and how to get it - that simple.
 <img class="bing" src="./assets/img/bing.png" alt="bing">
 
 >Kind Regards,

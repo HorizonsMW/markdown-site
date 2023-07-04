@@ -26,5 +26,12 @@
     "author": "Brian Mulwa",
     "path": "./docs/news/news-the-ins-and-outs.md",
     "summary": "A deep dive on how the news UI is built and how the different articles are fetched and rendered."
+  },
+  "5": {
+    "date": "2023-07-03",
+    "title": "Tiktok: My take!",
+    "author": "Brian Mulwa",
+    "path": "./docs/news/tiktok.md",
+    "summary": "Telling people to keep off Tiktok feels like advising friends to eat their vegetables - some will do it, some will not, others will try, without consistency. So, I'm going to try my best to tell you about these so called 'vegetables'. You decide what to do."
   }
 }
