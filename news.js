@@ -335,5 +335,5 @@ function hideAllArticles() {
   });
   clearOldLinksInAllArtircles();
 }
-console.log(`NEWS JS LOADED`);
+// console.log(`NEWS JS LOADED`);
 console.log(`Hello, ${slugify("World")}!`); // hello-world
