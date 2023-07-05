@@ -321,8 +321,8 @@ function showAllArticles() {
       // Or remove the div from the document
       //div.parentNode.removeChild(div);
     }, 1000); // The timeout should match the duration of the transition
-    allArticlesDiv.classList.add("allArticleFlowIn");
   });
+  allArticlesDiv.classList.add("allArticleFlowIn");
   clearOldLinksInAllArtircles();
 }
 function hideAllArticles() {
