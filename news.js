@@ -6,13 +6,15 @@ async function news() {
   var listOfLinks_loading = document.getElementById("accordionArticleLinks");
   listOfLinks_loading.innerHTML = `<h3>Loading...</h3>`;
   newsDiv.innerHTML = ``;
-  newsAuthorImg.innerHTML= '';
-  newsTitle.innerHTML = '<h2>Fetching...</h2>';
-  newsAuthor.innerHTML = '';
-  newsDate.innerHTML = '';
+  newsAuthorImg.innerHTML = "";
+  newsTitle.innerHTML = "<h2>Fetching...</h2>";
+  newsAuthor.innerHTML = "";
+  newsDate.innerHTML = "";
 
   // Clear links first in the recent artircles section
   clearOldLInksInRecentArtircles();
+  clearOldLinksInAllArtircles();
+
   try {
     // Fetch the news data and parse it as JSON
     const response = await fetch("news.json");
@@ -38,7 +40,7 @@ async function news() {
         var linkBody = `
             <div class="accordion-item mb-2" style="border: 2px solid #ff480055;border-radius:26px; background: #fceed1cf;">
               <h2 class="accordion-header" id="heading-${title}">
-                <button class="accordion-button bg-opacity-75 " style="color:#140e03f2; background:#ff480055;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="false" aria-controls="collapse-${slugTitle}">
+                <button class="accordion-button bg-opacity-75 " style="color:#140e03f2; background:#ff480055;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="true" aria-controls="collapse-${slugTitle}">
                   ${title}
                 </button>
               </h2>
@@ -58,7 +60,6 @@ async function news() {
         accordionArticleLinksDiv.innerHTML += linkBody;
       }
     }
-
     // Create an empty object to store the slug-path mapping - the mapping will help in:
     // fetching the relevant article, and the article attributes based on the URL passed,
     // This is necessary to allow navigating to specific article easy, especially when sharing article link
@@ -109,37 +110,7 @@ async function news() {
     let authorToUse = slugPathMap[slug].author;
 
     //Format the date to eg: July 2023
-    // Create a new Date object from the string
-    var date = new Date(pathDateToUse);
-
-    // Get the month as a number
-    var month = date.getMonth();
-
-    // Map the number to the month name
-    var months = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ];
-    var monthName = months[month];
-
-    // Get the year as a four-digit number
-    var year = date.getFullYear();
-
-    // Concatenate the month name and the year
-    var formattedDate = monthName + " " + year;
-
-    // Display the result
-    // console.log(formattedDate); // July 2023
+    var formattedDate = formatDateToString(pathDateToUse);
 
     // Update the news content using the path
     // newsDiv.innerHTML = `<md-block src="${pathToUse}"></md-block>`;
@@ -162,6 +133,15 @@ async function news() {
     newsTitle.innerHTML += " - " + formattedDate;
     newsAuthor.innerHTML += authorToUse.toUpperCase();
     newsDate.innerHTML = "(" + pathDateToUse + ")";
+
+    btnShowAllArticles.addEventListener("click", () => {
+      showAllArticles();
+      //populate all articles section last
+      allArticles(length, data);
+    });
+    btnHideAllArticles.addEventListener("click", () => {
+      hideAllArticles();
+    });
   } catch (error) {
     // Handle any errors that may occur
     console.error(error);
@@ -194,6 +174,19 @@ function buildNewsUI() {
               
             </div>
           </div>
+          <div class="col p-2 mb-3 bg-light bg-opacity-75 " id="allArticles" style="border-radius:15px;">
+            <div class="row p-1 m-1" style="border-radius:10px;">
+                <div class="col-10 d-flex justify-content-start">
+                  <button class="border-0" id="btnShowAllArticles"><h4 class="m-0">Show List of All Articles</h4></button>
+                </div>
+                <div class="col-2 d-flex justify-content-end">
+                  <a class="btn-close bg-danger" id="btnHideAllArticles"></a>
+                </div>
+            </div>
+            <div class="col">
+              <div class="col accordion" id="accordionArticleLinksAll"></div>
+            </div>
+          </div>
         </div>
       </div>`;
   appDiv.innerHTML = newsUI;
@@ -209,11 +202,56 @@ function slugify(text) {
   return text;
 }
 
+function formatDateToString(dateObject) {
+  // Create a new Date object from the string
+  var date = new Date(dateObject);
+
+  // Get the month as a number
+  var month = date.getMonth();
+
+  // Map the number to the month name
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var monthName = months[month];
+
+  // Get the year as a four-digit number
+  var year = date.getFullYear();
+
+  // Concatenate the month name and the year
+  var formattedDate = monthName + " " + year;
+  // Display the result
+  // console.log(formattedDate); // July 2023
+  return formattedDate;
+}
+
 function clearOldLInksInRecentArtircles() {
   // Clear recent links first in the recent artircles section
   // get list with links
   var listOfLinks = document.getElementById("accordionArticleLinks");
-  listOfLinks.innerHTML="";
+  listOfLinks.innerHTML = "";
+  var oldLinks = listOfLinks.getElementsByClassName("accordion-item"); // get a tags under recentArticlesLinks ul
+  // console.log(oldLinks); //html collection object
+  while (oldLinks.length > 0) {
+    oldLinks[0].remove(); //remove old links
+  }
+}
+function clearOldLinksInAllArtircles() {
+  // Clear links first in the all artircles section
+  // get list with links
+  var listOfLinks = document.getElementById("accordionArticleLinksAll");
+  listOfLinks.innerHTML = "";
   var oldLinks = listOfLinks.getElementsByClassName("accordion-item"); // get a tags under recentArticlesLinks ul
   // console.log(oldLinks); //html collection object
   while (oldLinks.length > 0) {
@@ -221,5 +259,81 @@ function clearOldLInksInRecentArtircles() {
   }
 }
 
+function allArticles(lengthOfList, dataObject) {
+  // populate all articles section
+  for (var i = lengthOfList; i >= 0; i--) {
+    // console.log(i); // print the current value of i
+    // console.log(dataObject[i]);
+    if (dataObject[i] == undefined) {
+      // hide undefined links, by doing literally nothing, Ha! :)
+      // var link = '';
+    } else {
+      let title = dataObject[i].title;
+      let date = dataObject[i].date;
+      let slugTitle = slugify(title);
+
+      var link = `#news-${slugTitle}`;
+      // console.log(link);
+      var linkBody = `
+            <div class="accordion-item mb-2" style="border: 2px solid #ff480055;border-radius:26px; background: #fceed1cf;">
+              <h2 class="accordion-header" id="heading-${title}" style="background:#ff480055;">
+                <button class="accordion-button bg-opacity-75 rounded-0" style="color:#140e03f2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="true" aria-controls="collapse-${slugTitle}">
+                  ${title + " - " + formatDateToString(date)}
+                </button>
+              </h2>
+              <div id="collapse-${slugTitle}" class="accordion-collapse collapse show" aria-labelledby="heading-${title}" data-bs-parent="#accordionArticleLinks">
+                <div class="accordion-body">
+                  <p>${dataObject[i].summary}</p>
+                  <a href="${link}">Read More</a>              
+                </div>
+              </div>
+            </div>
+            `;
+
+      // console.log(linkBody);
+      var accordionArticleLinksDivAll = document.getElementById(
+        "accordionArticleLinksAll"
+      );
+      accordionArticleLinksDivAll.innerHTML += linkBody;
+    }
+  }
+}
+function showAllArticles() {
+  console.log("showAllArticles");
+  window.newsDivsToHide = {}; // create an empty object
+  var news1 = document.getElementById("newsDiv"); // get the element by its id
+  var news2 = document.getElementById("newsHeader");
+  var news3 = document.getElementById("recentArticles");
+  var allArticlesDiv = document.getElementById("allArticles");
+  newsDivsToHide[1] = news1; // add the element as a property and a value to the object
+  // repeat for other elements
+  newsDivsToHide[2] = news2;
+  newsDivsToHide[3] = news3;
+  //console.log(newsDivsToHide);
+  var keys = Object.keys(newsDivsToHide); // get the keys of the object as an array
+  keys.forEach(function (key) {
+    //console.log(key, newsDivsToHide[key]); // use foreach on the keys array
+    newsDivsToHide[key].classList.add("fadeOutClass");
+    // Set a timeout function to hide the div after the animation ends
+    setTimeout(function () {
+      // Set the display property of the div to none
+      newsDivsToHide[key].classList.add("d-none");
+      // Or remove the div from the document
+      //div.parentNode.removeChild(div);
+    }, 1000); // The timeout should match the duration of the transition
+    allArticlesDiv.classList.add("allArticleFlowIn");
+  });
+  clearOldLinksInAllArtircles();
+}
+function hideAllArticles() {
+  console.log("Hide All Articles");
+  var keys = Object.keys(newsDivsToHide); // get the keys of the object as an array
+  keys.forEach(function (key) {
+    console.log(key, newsDivsToHide[key]); // use foreach on the keys array
+    newsDivsToHide[key].classList.remove("d-none");
+    newsDivsToHide[key].classList.remove("fadeOutClass");
+  });
+  clearOldLinksInAllArtircles();
+}
 console.log(`NEWS JS LOADED`);
 console.log(`Hello, ${slugify("World")}!`); // hello-world

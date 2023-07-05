@@ -71,7 +71,7 @@ h5 {
   margin-top: 100px;
   z-index: 1;
 }
-#app{
+#app {
   background-color: rgba(255, 255, 255, 0.63);
   border-radius: 20px;
 }
@@ -176,23 +176,55 @@ footer a {
   padding: 1px 2px;
   border-radius: 0.4em;
 }
-pre{
+pre {
   background-color: #494d5f;
   color: #d3d3d3;
   padding: 10px;
   border-radius: 10px;
 }
-#newsDiv{
+#newsDiv {
   background: #fceed1cf;
   padding: 10px 5px;
   border-radius: 15px;
   margin: 10px 0;
   color: #140e03f2;
 }
-#newsDiv .news_images{
+#newsDiv .news_images {
   text-align: center;
 }
-#newsDiv img{
-  max-width: 100%; 
-  vertical-align: middle; 
+#newsDiv img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+#allArticles button {
+  background-color: #ff480000;
+  border-radius: 10px;
+  color: #140e03f2;
+}
+/* fade out animation */
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.fadeOutClass {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+@keyframes flowIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.allArticleFlowIn {
+  animation-name: flowIn;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
 }
