@@ -14,10 +14,32 @@ So, back to Douyin. Douyin is full on China-based, requiring up to a Chinese pho
 
 "TikTok’s secret lies in its use of music and an extraordinarily powerful algorithm, which learns what content users like to see far faster than many other apps." - Bing AI.
 
+##### Great history, but what's up with the fuss surrounding tiktok?
+
+- **Tiktok has been plagued with privacy issues and data breaches.** The Tiktok app grants several permissions by default and will proceed to repeatedly ask you to grant it a permission if you had denied it. [The Guardian](https://www.theguardian.com/technology/2022/jul/19/tiktok-has-been-accused-of-aggressive-data-harvesting-is-your-information-at-risk) describes Tiktok's measures as `aggressive`. Tiktok may access data such as your calendars, contact lists, media and files including those on external storage, device location. Here is the catch though, the app does not necessarily need all that data to function. So where does all this data go? Why does the app need all that data? Read more on that article from The Guardian.
+
+- **Tiktop has been accused of moderating content and being racialy biased** by censoring or removing content that is critical to the Chinese government and discriminating against certain users by limiting their exposure on the app.
+  
+- **Tiktok allows content that promotes violence, abuse and/or illegal activities** to exist and be shared on the platform without restriction. Tiktok also does not protect minors from unsafe content, according to reports.
+
+- **TikTok has been accused of being a breeding ground for cyberbullying.** This is due in part to the app's anonymous commenting feature, which makes it easy for users to harass and bully others without fear of being identified.
 
 
+So, what's my take? Probably never going to ever board the tiktok train. I understand that Tiktok has remodelled the internet and brought about a new way to be more creative and engaging in this digital world, however, the allegations against Tiktok are not to be taken lightly. It is sad how some of us may question what they have to hide by basing their argument on the fact that they do not belong to a certain group of people or that they do not meet a certain standard. It is not about what you have to hide, rather, it is a matter of considering your online safety and safety of the person next to you. The more of you there is out there, the more you are prone to cyber attacks, as attackers have the luxury of piecing together the abundant information they have of you. Remember Bytedance which owns Tiktok? Well, ByteDance is owned by the Chinese government. The Chinese government also has access to this data and you do not know who may be monitoring you.
+
+Why are kids on tiktok? Stuff is all over, gnarly and haunting videos get shared randomly and we're just letting kids joy ride on tiktok.
 
 ###### Sources:
+Here are some links that provide more details and examples of the accusations against TikTok:
+
+- [TikTok has been accused of ‘aggressive’ data harvesting. Is your information at risk? | TikTok | The Guardian](https://www.theguardian.com/technology/2022/jul/19/tiktok-has-been-accused-of-aggressive-data-harvesting-is-your-information-at-risk)
+- [A Look Back at TikTok’s Controversies and Biggest Foul-ups - Technowize](https://www.technowize.com/a-look-back-at-tiktok-controversies-and-biggest-foul-ups/)
+- [TikTok accused of mishandling sexual harassment allegations](https://www.ft.com/content/6d43008e-055d-46c1-a845-f7bdee8669f4)
+- [Ex-ByteDance Executive Accuses TikTok Parent Company of ‘Lawlessness’ in Lawsuit - The New York Times](https://www.nytimes.com/2023/05/12/technology/tiktok-bytedance-lawsuit-china.html)
+- [TikTok accused of spying on the US and corrupting youth - Le Monde.fr.](https://www.lemonde.fr/en/culture/article/2023/01/22/tiktok-accused-of-spying-on-the-us-and-corrupting-youth_6012610_30.html)
+
+###### Other Notable sources
+
 - 1) https://www.bbc.com/news/technology-53640724
 - 2) https://en.wikipedia.org/wiki/TikTok
 - 3) https://www.big3.sg/blog/a-brief-history-of-tiktok-and-its-rise-to-popularity
