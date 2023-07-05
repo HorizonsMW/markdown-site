@@ -277,7 +277,7 @@ function allArticles(lengthOfList, dataObject) {
       var linkBody = `
             <div class="accordion-item mb-2" style="border: 2px solid #ff480055;border-radius:26px; background: #fceed1cf;">
               <h2 class="accordion-header" id="heading-${title}" style="background:#ff480055;">
-                <button class="accordion-button bg-opacity-75 rounded-0" style="color:#140e03f2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="true" aria-controls="collapse-${slugTitle}">
+                <button class="accordion-button bg-opacity-75 rounded-0 border-0" style="color:#140e03f2;" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-${slugTitle}" aria-expanded="true" aria-controls="collapse-${slugTitle}">
                   ${title + " - " + formatDateToString(date)}
                 </button>
               </h2>
