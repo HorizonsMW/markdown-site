@@ -175,9 +175,9 @@ function buildNewsUI() {
             </div>
           </div>
           <div class="col p-2 mb-3 bg-light bg-opacity-75 " id="allArticles" style="border-radius:15px;">
-            <div class="row p-1 m-1" style="border-radius:10px;">
+            <div class="row p-1 m-1" style="border-radius:10px; border: 2px solid #ff480055;">
                 <div class="col-10 d-flex justify-content-start">
-                  <button class="border-0" id="btnShowAllArticles"><h4 class="m-0">Show List of All Articles</h4></button>
+                  <button class="" id="btnShowAllArticles"><h4 class="m-0">Show List of All Articles</h4></button>
                 </div>
                 <div class="col-2 d-flex justify-content-end">
                   <a class="btn-close bg-danger" id="btnHideAllArticles"></a>

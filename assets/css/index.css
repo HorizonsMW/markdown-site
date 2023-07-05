@@ -200,6 +200,7 @@ pre {
   background-color: #ff480000;
   border-radius: 10px;
   color: #140e03f2;
+  border:2px solid #ff480055;
 }
 /* fade out animation */
 @keyframes fadeOut {
