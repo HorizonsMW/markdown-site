@@ -1,0 +1,18 @@
+##### No, this is something different. 
+
+Infatuation, like a moth to a light, no? Well, we have used that a lot, at least I have. What else then? You know, I look up at night and see endlessness, a chasm of beauty and possibilities. Think a billion stars, being born and destroyed at the same time, a spectacle. When that coin lands, for a split second, you always think you got it, it might be brief, but it is reassuring. I keep thinking, that maybe I did get it this time, with you.
+
+
+Like a moth to a light? No, I do not think so. This (infatuation) is bigger than it sounds, if I may. The endlessness brute of a spectacle that is the night sky, in my own words. Can you count feelings? I'd assume you do, otherwise how do you tell when it just what you needed to pop open a certain can of worms. I know, because I have hit my limit. So, what is it really? I'm thinking, what is that one exlusive attraction you cannot define in words? Like the moth to the light. Don't call me out on a technicality here, I do understand that pretty much anything can be summed up in words - moth to a light is in words anyway. But, how do you circle down, to the most definitive of words, that are read in the shortest split second, but say so much, to embody that which is, apparently, unexplainable? Yourp ulse rate hikes, then butterflies, flopping around, deep down, every breath feels calculated. How do you nail it down, 'This is what I'm going to say.' Because, that is what I need right now, as I walk towards you. I look over, above the crowd, and catch that silver glitter, of the rays bouncing off on a pearly white. The gloss does not make it any better, perfect, like someone paid some good amount of attention - bringing out the splendor, like the Spirit of Ecstacy, only subtle, but much better. Lovely! 
+
+
+Is this what Romeo and Juliet saw in each other? Or that guy in Rome, who was writting his girlfriend's name on the Colosseum. An impecable match? Yoh! Sidenote, he actually came forward, to apologise. I think about all this, and wonder, 'how did I end up 'here'? Where is 'here' anyway?' A colossal mess, somewhere upstairs. Why does it 'feel' though? What is that, in the chest, on your left, thump-thump. See, it is not words, so I cannot pin it. It is a turmoil, of what was, what is, what can be, and what cannot be. See, I know this for a fact, that it may be, but that is just as bad, as it may not be. Backed up against a wall, nothing is holding you, and yet, you cannot move. Say, you do get to move, I once did, and it did not end well, or rather, it actually ended - and I did not want it to. The fruestration, building up, you think, going back in loops, of what you could have done. But in the end, sigh, shattered glass. You gaze down, 'Do I pick this up now!?'
+
+
+The one thing I do know, for sure, is that; it can be 'fixed'. Glass can always be melted and remoulded, again and again. But this is not about glass, at least not exactly. "Whispers of Eden" by Nogymx. Roses smell good, not just any good, exceptional-kind-of good. They have a certain appeal, it is soft, like fur, and loaded with emotion, that you just have to experience to understand. I wish you cared, they say the world is full of beauty, you just have to open your eyes - nostrils if we are sticking to context. You do not smell like roses, no, yours is a symphony, a blend, a flower garden - if I may. Hauntingly beautiful! 
+
+***
+
+I will leave you with this, are we staring at the same moon? Infatuation!
+
+***
