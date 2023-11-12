@@ -21,14 +21,10 @@ with you on your next project.
 
 #### Updates
 
-<div class="d-grid d-md-flex m-2">
-<div class="col d-none"><!--twitter embedded timeline, not fuctioning-->
-   <a class="twitter-timeline" data-lang="en" data-theme="light" data-tweet-limit="3" data-width="300"
-  data-height="300" href="https://twitter.com/marcobrayan4?ref_src=twsrc%5Etfw">Tweets by marcobrayan4</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
-     <div class="col d-grid d-md-flex align-items-center m-2 p-2 home">
+<div class="d-grid d-md-flex">
+     <div class="col d-grid d-md-flex align-items-center home">
         <button id="done" class="p-3 text-light rounded-circle m-0 border-0 d-none d-md-block" onclick="nextUpdate()"> <img src="./assets/img/icons/icons8-back-to-100.png" alt="previous-page" width="40px"></button>
-        <div class="col w-100 px-2 update m-2">
+        <div class="col w-100  update">
             <h5 id="title">title</h5>
             <p id="updateDate">date</p>
             <p id="update">update</p> 

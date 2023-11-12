@@ -476,7 +476,9 @@
 
       function closeMenu() {
         let btnGroup = document.getElementById("btnGroup");
-        btnGroup.classList.add(`d-none`);
+        btnGroup.classList.remove("d-flex");
+        btnGroup.classList.add("d-none");
+
       }
     </script>
   </body>
