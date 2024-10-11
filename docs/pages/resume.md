@@ -6,7 +6,7 @@
   <div class="col d-flex justify-content-center mt-2">
   <md-block>
   ## Brian Mulwa
-  #### Front End Developer || ICT Technician || Graphics Designer
+  #### IT Service Desk Administrator ||Front End Developer || ICT Technician || Graphics Designer
   Email: mw711990838@gmail.com || bmulwa766@gmail.com
 
   Phone:  [254 711 990838](tel:+254711990838)
@@ -25,9 +25,7 @@
 ***
 #### PROFFESSIONAL SUMMARY
 ***
-Innovative Technician with a proven track record of identifying performance issues and
-making updates to achieve optimal performance. Adept in collaborating with colleagues
-to ensure product quality and improvements. Extensive background in:
+Innovative Technician with a proven track record of identifying performance issues and making updates to achieve optimal performance. Adept in collaborating with colleagues to ensure product quality and improvements. Extensive background in:
 <ul>
     <li>Mobile and web applications development,</li>
     <li>Operating systems deployment,</li>
@@ -35,16 +33,42 @@ to ensure product quality and improvements. Extensive background in:
     <li>ICT equipment repair and maintenance, along with CyberSecurity</li>
 </ul>
 
-Experienced Web Developer, bringing forth expertise in front end design, development,
-testing and maintenance of web systems. Proficient in an assortment of technologies,
-including Java, JavaScript, HTML, CSS, Markdown, MongoDB, and SQL Server and
-Adobe set of applications. Experienced in leading teams to evaluate system functioning
-and remain forward-thinking in design and deployment. Committed to achieving optimal
-results, and successful completion of projects.
+Experienced Web Developer, bringing forth expertise in front end design, development, testing and maintenance of web systems. Proficient in an assortment of technologies, including Java, JavaScript, HTML, CSS, Markdown, MongoDB, and SQL Server and Adobe set of applications. Experienced in leading teams to evaluate system functioning and remain forward-thinking in design and deployment. Committed to achieving optimal results, and successful completion of projects.
 
 ***
 #### WORK EXPERIENCE
 ***
+##### IT Service Desk Administrator - CCI Global (April 2024 – Present)
+Key responsibilities:
+* Incident Management: Handle the complete incident lifecycle from identification to resolution, including logging, classification, prioritization, and escalation of IT issues.
+  
+* Communication and Notification: Inform relevant support groups and stakeholders about critical incidents, manage escalations, and send updates via various channels (teams, email).
+  
+* User Account Administration: Perform password resets, account unlocking, and manage the full lifecycle of user accounts (creation, updates, removals) including Active Directory management.
+  
+* Customer Support: Provide high-quality service to internal and external customers, ensuring all issues are resolved within SLA timeframes.
+  
+* Documentation and Compliance: Maintain accurate records of all incidents,
+ensure proper updates in ticketing systems, and adhere to established IT
+processes and procedures.
+
+
+##### Contact Centre Agent - CCI Kenya (Aug 2023 – March 2024)
+Key responsibilities:
+* Maintained positive, empathetic, and professional customer interactions across voice and chat channels.
+  
+* Promptly responded to and resolved customer inquiries and complaints.
+  
+* Demonstrated comprehensive product knowledge to accurately address questions.
+  
+* Assisted customers with order processing, form filling, and account management.
+  
+* Kept accurate records of customer interactions, transactions, and feedback.
+  
+* Coordinated with team members to resolve issues and improve processes.
+  
+* Ensured high customer satisfaction by providing professional support.
+
 ##### Technical Support (IT) – Trailmycar Solutions LTD (Sep, 2022 - Dec, 2022)
 
 Key responsibilities:
@@ -116,6 +140,17 @@ safety and privacy.
 ***
 #### EDUCATION
 ***
+##### IT Service Desk Administrator - CCI IT Academy (May 2024 – Oct 2024)
+Covered:
+* Soft Skills
+  
+* ITIL
+   
+* IT Fundamentals
+  
+* CompTIA A+
+* CompTIA N+
+
 ##### Bachelor of Science in Computer Technology - Murang’a University of Technology (Aug, 2018 - Nov, 2022)
 * Graduated with Second Class (UPPER DIVISION)
 * Completed professional development in "ENHANCED WINDOWS 10 OPERATING

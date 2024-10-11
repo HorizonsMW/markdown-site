@@ -5,7 +5,7 @@ if (!location.hash) {
 }
 
 function getContent(fragmentId, callback) {
-  // lets do some custom content for each page of your website
+  // lets do some custom content for each page of the website
   var page = `<md-block src="./docs/pages/${fragmentId}.md" id="md-block-app"></md-block>`;
   //console.log(page);
 
