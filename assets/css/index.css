@@ -1,64 +1,119 @@
+:root {
+    --p1: #a8edea;
+    --p2: #fed6e3;
+    --p3: #d299c2;
+    --p4: #fef9d7;
+}
+.pastel-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+        125deg,
+        var(--p1),
+        var(--p2),
+        var(--p3),
+        var(--p4),
+        var(--p1)
+    );
+    background-size: 300% 300%;
+    animation: gradientShift 16s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 * {
-  overflow-x: hidden;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    overflow-x: hidden;
+    font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
 }
 
 body {
-  /*background-image: url(https://bing.biturl.top/?resolution=1366&format=image&index=0&mkt=random);*/
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    /*background-image: url(https://bing.biturl.top/?resolution=1366&format=image&index=0&mkt=random);*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #btnGroup {
-  z-index: 3;
-  right: 20px;
-  width: 10em;
-  background-color: rgba(245, 245, 220, 0.623);
-  padding-left: 10px;
-  padding-right: 0px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 1em;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  border: 2px solid rgba(35, 32, 13, 0.814);
+    z-index: 3;
+    right: 20px;
+    width: 10em;
+    background-color: rgba(245, 245, 220, 0.623);
+    padding-left: 10px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 1em;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    border: 2px solid rgba(35, 32, 13, 0.814);
 }
 
 #btnGroup img {
-  width: 32px;
+    width: 32px;
 }
 
 #btnGroup a {
-  text-decoration: none;
-  color: rgba(35, 32, 13, 0.814);
+    text-decoration: none;
+    color: rgba(35, 32, 13, 0.814);
 }
 
 .custom-link a {
-  text-decoration: none;
-  margin: 2px;
-  font-size: inherit;
+    text-decoration: none;
+    margin: 2px;
+    font-size: inherit;
 }
 
 .custom-link img {
-  width: 30px;
+    width: 30px;
 }
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  overflow-y: hidden;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-y: hidden;
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  color: white;
-  height: auto;
-  z-index: 2;
-  padding: 5px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    height: auto;
+    z-index: 2;
+    padding: 5px;
 }
 
 header p,
@@ -67,168 +122,168 @@ h2,
 h3,
 h4,
 h5 {
-  margin: 0;
+    margin: 0;
 }
 
 .content-section {
-  margin-top: 100px;
-  z-index: 1;
+    margin-top: 100px;
+    z-index: 1;
 }
 #app {
-  background-color: rgba(255, 255, 255, 0.63);
-  border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.63);
+    border-radius: 20px;
 }
 footer .row h2 {
-  text-align: center;
+    text-align: center;
 }
 
 .home a {
-  text-decoration: none;
-  font-size: 102%;
-  color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 102%;
+    color: rgb(0, 0, 0);
 }
 
 .home img {
-  height: 40px;
+    height: 40px;
 }
 
 footer a {
-  text-decoration: none;
-  color: rgb(248, 248, 135);
+    text-decoration: none;
+    color: rgb(248, 248, 135);
 }
 
 #messageSender {
-  z-index: 3;
-  width: 20em;
-  background-color: rgba(245, 245, 220, 0.911);
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 1em;
-  overflow: hidden;
-  position: fixed;
-  top: 25%;
-  border: 2px solid rgba(35, 32, 13, 0.814);
+    z-index: 3;
+    width: 20em;
+    background-color: rgba(245, 245, 220, 0.911);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 1em;
+    overflow: hidden;
+    position: fixed;
+    top: 25%;
+    border: 2px solid rgba(35, 32, 13, 0.814);
 }
 
 #myLink a {
-  text-decoration: none;
-  color: beige;
-  float: right;
-  background-color: #19875400;
-  padding: 2px 10px;
-  border-radius: 15px;
+    text-decoration: none;
+    color: beige;
+    float: right;
+    background-color: #19875400;
+    padding: 2px 10px;
+    border-radius: 15px;
 }
 
 .input input,
 .input textarea {
-  width: 90%;
-  border: 2px solid rgba(35, 32, 13, 0.814);
+    width: 90%;
+    border: 2px solid rgba(35, 32, 13, 0.814);
 }
 
 #moreOptions {
-  z-index: 4;
-  width: 300px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  overflow: hidden;
-  position: fixed;
-  bottom: 30px;
-  right: -250px;
+    z-index: 4;
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 30px;
+    right: -250px;
 }
 
 #moreOptionsButtons {
-  z-index: 4;
-  width: 300px;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  overflow: hidden;
-  position: fixed;
-  bottom: 80px;
-  right: -250px;
+    z-index: 4;
+    width: 300px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+    position: fixed;
+    bottom: 80px;
+    right: -250px;
 }
 
 #moreOptionsButtons img {
-  width: 30px;
+    width: 30px;
 }
 
 .bing {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 .update {
-  border-radius: 1em;
-  border: 3px solid rgba(35, 32, 13, 0.814);
-  padding: 10px 5px;
-  min-height: 400px;
+    border-radius: 1em;
+    border: 3px solid rgba(35, 32, 13, 0.814);
+    padding: 10px 5px;
+    min-height: 400px;
 }
 #newsContent {
-  border-radius: 1em;
-  border: 3px solid rgba(35, 32, 13, 0.814);
-  padding: 10px 5px;
+    border-radius: 1em;
+    border: 3px solid rgba(35, 32, 13, 0.814);
+    padding: 10px 5px;
 }
 .update code {
-  background-color: #e0f4f4;
-  color: #541434;
-  padding: 1px 2px;
-  border-radius: 0.4em;
+    background-color: #e0f4f4;
+    color: #541434;
+    padding: 1px 2px;
+    border-radius: 0.4em;
 }
 pre {
-  background-color: #494d5f;
-  color: #d3d3d3;
-  padding: 10px;
-  border-radius: 10px;
+    background-color: #494d5f;
+    color: #d3d3d3;
+    padding: 10px;
+    border-radius: 10px;
 }
 #newsDiv {
-  background: #fceed1cf;
-  padding: 10px 5px;
-  border-radius: 15px;
-  margin: 10px 0;
-  color: #140e03f2;
+    background: #fceed1cf;
+    padding: 10px 5px;
+    border-radius: 15px;
+    margin: 10px 0;
+    color: #140e03f2;
 }
 #newsDiv .news_images {
-  text-align: center;
+    text-align: center;
 }
 #newsDiv img {
-  max-width: 100%;
-  vertical-align: middle;
+    max-width: 100%;
+    vertical-align: middle;
 }
 #allArticles button {
-  background-color: #ff480000;
-  border-radius: 10px;
-  color: #140e03f2;
-  border:2px solid #ff480055;
+    background-color: #ff480000;
+    border-radius: 10px;
+    color: #140e03f2;
+    border: 2px solid #ff480055;
 }
 /* fade out animation */
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 .fadeOutClass {
-  animation-name: fadeOut;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 @keyframes flowIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 .allArticleFlowIn {
-  animation-name: flowIn;
-  animation-duration: 2s;
-  animation-timing-function: ease-in;
+    animation-name: flowIn;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
 }
