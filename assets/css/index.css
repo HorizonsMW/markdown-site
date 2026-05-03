@@ -19,7 +19,10 @@
     background-size: 300% 300%;
     animation: gradientShift 16s ease infinite;
 }
-
+@property --p1 { syntax: '<color>'; inherits: true; initial-value: #a8edea; }
+@property --p2 { syntax: '<color>'; inherits: true; initial-value: #fed6e3; }
+/* repeat for p3, p4 */
+:root { transition: --p1 1.5s, --p2 1.5s, --p3 1.5s, --p4 1.5s; }
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
